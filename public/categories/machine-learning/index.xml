@@ -2,30 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on Adventures in Data Science</title>
-    <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/machine-learning/</link>
+    <link>/categories/machine-learning/</link>
     <description>Recent content in Machine Learning on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://github.com/martin-gleason/martin-gleason.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setting the Bar for 2018</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/2018/01/setting-the-bar-for-2018/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/2018/01/setting-the-bar-for-2018/</guid>
-      <description>This new blog has a single purpose: To document my attempt to deploy a neural netowrk in order to ethically address at least one issue of faced by juvenile justice professionals and justice involved youth by December, 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</description>
-    </item>
-    
-    <item>
-      <title>This is Not the Project - This is Only a Tribute</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/blog/first-post/</link>
+      <link>/2017/12/first-post/</link>
       <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/blog/first-post/</guid>
+      <guid>/2017/12/first-post/</guid>
       <description>This new blog has a single purpose: To document my attempt to deploy a neural netowrk in order to ethically address at least one issue of faced by juvenile justice professionals and justice involved youth by December, 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</description>
     </item>
     

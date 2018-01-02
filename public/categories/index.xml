@@ -2,65 +2,65 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Adventures in Data Science</title>
-    <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://github.com/martin-gleason/martin-gleason.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Science</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/data-science/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <link>/categories/data-science/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/categories/data-science/</guid>
+      <guid>/categories/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Education</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/education/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <link>/categories/education/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/categories/education/</guid>
+      <guid>/categories/education/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Juvenile Justice</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/juvenile-justice/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <link>/categories/juvenile-justice/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/categories/juvenile-justice/</guid>
+      <guid>/categories/juvenile-justice/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Machine Learning</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/machine-learning/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <link>/categories/machine-learning/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/categories/machine-learning/</guid>
+      <guid>/categories/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/r/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <link>/categories/r/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/categories/r/</guid>
+      <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Timeline</title>
-      <link>https://github.com/martin-gleason/martin-gleason.github.io/categories/timeline/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <link>/categories/timeline/</link>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/martin-gleason/martin-gleason.github.io/categories/timeline/</guid>
+      <guid>/categories/timeline/</guid>
       <description></description>
     </item>
     
