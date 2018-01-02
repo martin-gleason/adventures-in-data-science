@@ -1,0 +1,624 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.32 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Setting the Bar for 2018</title>
+    <meta name="author" content="Martin Gleason, MS">
+    <meta name="keywords" content=", R, Juvenile Justice, data science, social good">
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+    <meta name="description" content="This new blog has a single purpose: To document my attempt to deploy a neural netowrk in order to ethically address at least one issue of faced by juvenile justice professionals and justice involved youth by December, 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.">
+    <meta property="og:description" content="This new blog has a single purpose: To document my attempt to deploy a neural netowrk in order to ethically address at least one issue of faced by juvenile justice professionals and justice involved youth by December, 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Setting the Bar for 2018">
+    <meta property="og:url" content="/2018/01/first-post/">
+    <meta property="og:site_name" content="Adventures in Data Science">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Adventures in Data Science">
+    <meta name="twitter:description" content="This new blog has a single purpose: To document my attempt to deploy a neural netowrk in order to ethically address at least one issue of faced by juvenile justice professionals and justice involved youth by December, 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.">
+    
+      <meta name="twitter:creator" content="@officergleason">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="/DREAMDEEP.jpg">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-82920409-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Adventures in Data Science</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/DREAMDEEP.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/DREAMDEEP.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Martin Gleason, MS</h4>
+        
+          <h5 class="sidebar-profile-bio">Juvenile Probation Officer, Aspiring Data Scientist</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/martin-gleason">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/4521156">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Setting the Bar for 2018
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-01-01T00:00:00Z">
+        
+  January 1, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/data-science">Data Science</a>, 
+    
+      <a class="category-link" href="/categories/education">Education</a>, 
+    
+      <a class="category-link" href="/categories/juvenile-justice">Juvenile Justice</a>, 
+    
+      <a class="category-link" href="/categories/machine-learning">Machine Learning</a>, 
+    
+      <a class="category-link" href="/categories/r">R</a>, 
+    
+      <a class="category-link" href="/categories/timeline">Timeline</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>This new blog has a single purpose: To document my attempt to deploy a neural netowrk in order to ethically address at least one issue of faced by juvenile justice professionals and justice involved youth by December, 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Being an officer is not just a job for me. It is a vocation, a calling. A calling that I want to answer by improving lives of the young people involved in the system AND changing the system of juvenile justice. Over my career, I have seen a number of iniativies come and go: From Balanced and Restorative Justice Programming to detention alternatives to the deployment of multiple actuarial risks assemments. There has been one common, consistent factor between all of these programs: A desire for all stake holders to have more information at their finger tips. This mimics my own experience at the court. As my career has moved from one of direct service to one of policy and programming, I have come to believe that only a rigrious and deliberate methodology regarding how the court documents its programs, interventions, successes, and failures will change the court for the better. The circumstances surrounding my education, career path, the opportunities provided by modernizing our case management system, and my developing set of data scienc skills make 2018 the perfect time to work on the code and ethics of AI in juvenile justice.</p>
+<p>I will be the first to admit that Psych Stats – a class I took in 1995 at <a href="http://beloit.edu">Beloit</a> – was not my best subject. I had an opportunity to learn <a href="https://en.wikipedia.org/wiki/SPSS">SPSS</a>, but I either overslept or ditched it for some other “project.” I justified this mistake with the confidence that only a college student has: “I am going to be a lawyer. I won’t do psych research.” Two years later, I was certain that I was going get either joint JD/Master in Social Work (MSW) or simply the MSW, because I knew I still wanted to work with “at risk you.” It did not matter how much I enjoyed research methods. I was confident that my path did not include either research or stats. I was wrong.</p>
+<p><img height="450" width="750"> <img src="mc.jpg" alt="Beloit College, Middle College Campus. Not where I took most of my classes, mind you." /> </img></p>
+<p>To be fair to stupid I had no idea that I would one day be drawn to data science the same way I am to making the lives of young people better. When I was hired, shortly after college, by the Cook County Juvenile Court as a probation officer, I knew I had started a career that woud play a dramatic life in each family I was lucky to work with. I started working with sexually aggressive youth, and soon volunteered to work on a cutting edge, youth-run program. I eventually migrated from direct service to developing the youth voice program. I recently (as of this writing) left that position to work in probation’s Office of Career Services. Looking back on a seventeen year carer, I see clear pattern: Starting with direct service to young people and growing into a more department and system wide view of juvenile justice. This pattern of program and policy development requires more than a desire to help. It requires a multi-discipline approach, and an understanding of how we document, assess, and improve the offerings at the court.</p>
+<p>This trend, in part, has to do with my graduate degree. While I did not get the MSW, I did get a Masters in Information Systems from DePaul University<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. It was not an easy choice to make, but in the end I realized that while the court has a lot of social workers it does not have a lot of social workers (or social work-releated officers) who are comfortable with computers and information architure. Information is king, even in juvenile justice. Thus, my new, post-college plan, was born: Develop the skills and credentials to help my colleagues enter the information age. My desire to help young people has not waivered. My focus has shifted. Instead of working with young people, I want to help my peers continue to do their amazing work: Changing the lives of young people, and not handcuffed to an ancient, hot mess of an electronic case management.</p>
+<div align="center">
+<div class="figure">
+<img src="signon.png" alt="This is similar to our case management signon. The only difference? I have to sign on twice to use one app." />
+<p class="caption"><em>This is similar to our case management signon. The only difference? I have to sign on twice to use one app.</em></p>
+</div>
+</div>
+<p>This vision came into focus during my capstone class at DePaul. I made a pitch to my cohort on how the court could move away from our old system and into a more efficient, web based product. One geared towards secure information exchange, portability, and ease of use. It would take nearly two years for this acacademic work to pay off. In 2016, the court began looking at new case management systems. I was brought on the team to talk requirements, deployment, and maintence. Our primary complicaiton? Our procurement system is as old as our case management system. That meant that while we did talk about requirements, we did more documentation than testing or deployment. Purchase and implementation delays not withstanding, this new record system presented a fantastic opportunity: To push our <a href="http://dsapp.uchicago.edu/resources/datamaturity/">data maturity</a> to a new level. My thinking was clear. While court records need to be kept privately due to the <a href="http://www.ilga.gov/legislation/ilcs/ilcs3.asp?ChapterID=50&amp;ActID=1863">Juvenile Justice Act</a>, our forms, reports, and findings are not held to the same level of privacy. We could, given this opportunity, delve into our data as well as modernize our data polices, practices, and procedures. We could become a truly data driven office.</p>
+<p>Data driven is not a new concept in juvenile justice. The Casey Foundation’s 20+ year old <a href="http://www.aecf.org/work/juvenile-justice/jdai/">Juvenile Detention Alternative Iniative (JDAI)</a> lists data as a core strategy for reducing the juvenile justice system’s reliance on detention. Cook County has been a model JDAI site for longer than I have been an officer. An initative’s longevity, however, is not a good metric for an initiave’s level of buy-in or efficiacy. My coworkers have been producing reports and sharing the status of our innovations; yet, they have been hampered by our current system’s lack of portablity–exporting to Excel and transforming that tabular data into graphs and charts is a time consuming process. There were also only four people pulling these reports, but close to three hundred people putting in their contacts, observations, case logs, progress updates, case plans, risk assessments, and case closings. While our new system could streamline and centralize our record keeping, and allow for on the fly reporting, I believe the court can do more. Fortunately, I am not alone in this assessment. A handful of my colleagues (including my supervisor and his supervisor) believe that if we apply more rigirous, structured, and modern methods to collecting, storing, and transforming our data, then we can move beyond simple reporting and help make everyone in the court make better informed decisions to support youth, families and communities. This shared belief paved the way for my newest progam here: The Data Science Work Group.</p>
+At least a year before I made the workgroup, I was looking for a way to do more with all the data the court own. As part of my review, I discovered the <a href="https://dssg.uchicago.edu/">Data Science for the Social Good Fellowship</a>, and while I was not selected as a 2016 Fellow, it did introduce me to my new (and favorite) tool: R.
+<div align="center">
+<div class="figure">
+<img src="r_logo.png" alt="R. Open Source Statitical Software. No pirates incldued" />
+<p class="caption"><em>R. Open Source Statitical Software. No pirates incldued</em></p>
+</div>
+</div>
+<p>A little bit of research later, and I was signed up for a number of classes at <a href="https://www.datacamp.com/">DataCamp</a> classes, as well as a course or two from <a href="https://www.coursera.org/">Coursera</a>. All of the reading, coding/scripting, and research led to something that sophomore me would find unbelieveable: That I did not just like statistics, but that I wanted to continue my education in that discipline far beyond my financial means.</p>
+<p>I am not naive enough to call myself a Data Scientist based on course work from DataCamp and Coursera. Yet these services have given me the opportunity to learn something that I have fallen in love with. I may not have the means to get another graduate degree, but that is not going to stop me from learning. Since I am proficient with R, if I want to be taken seriously, I need to do more than just practice and experiment. I need to work, every day, on a project that matters. That includes sharing the process (and data), the failures, as well as the successes. x</p>
+<p>That’s the nature of this blog: To document my attempt to implement a neural network with one year’s time, and use it in an ethical way for the young people I serve. That’s ambitious–maybe too ambitious–but I believe it is doable. I plan on documenting everything about this proccess–from topic selection to testing to deployment–as well as a handful of other issues (why R, Data Science for the Social Good, Data Science at the Court, etc.) The current plan is three posts a week, with the bulk of the coding to be done during the weekend. It may not be as streneous as a graduate degree from one of my two ideal campuses<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, <a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>, but I think this project will not just hone my skills, but help the kids that I am so very lucky to know.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This should go without saying, but all the views and opinions here expressed are mine and should not reflect the official position, stance, or operations of the Cook County Juvenile Court. I’m just working on a data science project that I hope they will be able to use before I retire in May, 2033.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>I graduated with distinction and joined <a href="http://upe.acm.org">UPE.</a><a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><a href="https://harris.uchicago.edu/">Universiy of Chicago, Harris School of Public Policy</a><a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p><a href="https://www.ischool.berkeley.edu/">Berkeley School Of Information</a><a href="#fnref4">↩</a></p></li>
+</ol>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/beloit/">beloit</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/how-to/">how to</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/intro/">intro</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/machine-learning/">machine learning</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/martingleason%25!%28EXTRA%20string=/2018/01/first-post/%29">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/officergleason%25!%28EXTRA%20string=/2018/01/first-post/%29">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Martin Gleason, MS. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/martingleason%25!%28EXTRA%20string=/2018/01/first-post/%29">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/officergleason%25!%28EXTRA%20string=/2018/01/first-post/%29">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/martingleason%25!%28EXTRA%20string=%2F2018%2F01%2Ffirst-post%2F%29">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/officergleason%25!%28EXTRA%20string=%2F2018%2F01%2Ffirst-post%2F%29">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/DREAMDEEP.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Martin Gleason, MS</h4>
+    
+      <div id="about-card-bio">Juvenile Probation Officer, Aspiring Data Scientist</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Probation Officer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Chicago, Illinois
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/01/first-post/">
+                <h3 class="media-heading">Setting the Bar for 2018</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">This new blog has a single purpose: To document my attempt to deploy a neural netowrk in order to ethically address at least one issue of faced by juvenile justice professionals and justice involved youth by December, 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         1 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/bean.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2018\/01\/first-post\/';
+          
+            this.page.identifier = '\/2018\/01\/first-post\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'martygleason';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+
