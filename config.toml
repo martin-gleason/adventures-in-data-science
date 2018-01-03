@@ -14,7 +14,7 @@
 
 
 # My config.toml
-baseURL = "/"
+baseURL = "https://adventuresindata.science"
 languageCode = "en-us"
 defaultContentLanguage = "en-us"
 title = "Adventures in Data Science"
