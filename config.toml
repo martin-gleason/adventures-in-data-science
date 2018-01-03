@@ -24,7 +24,7 @@ googleAnalytics = "UA-82920409-2"
 paginate = 7
 canonifyurls = false
 enableEmoji = true
-
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [permalinks]
   post = "/:year/:month/:slug/"
 
