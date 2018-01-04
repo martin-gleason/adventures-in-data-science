@@ -65,18 +65,36 @@
     </item>
     
     <item>
+      <title>Meta</title>
+      <link>/categories/meta/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>R Studio</title>
+      <link>/categories/r-studio/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r-studio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Timeline</title>
       <link>/categories/timeline/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/timeline/</guid>
       <description></description>

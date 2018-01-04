@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on Adventures in Data Science</title>
-    <link>/categories/r/</link>
-    <description>Recent content in R on Adventures in Data Science</description>
+    <title>R Studio on Adventures in Data Science</title>
+    <link>/categories/r-studio/</link>
+    <description>Recent content in R Studio on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/r-studio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>/2018/01/marks-for-style/</guid>
       <description>Blogging is old hat to me, but data science is brand new. I’m studying this subject (and a survey of all its componenet parts) like Homer here. This nervous energy is why my first few posts are all about what I do know: Juvenile justice, JEMS, the court, and blogging. Most of these early posts are going to address these topics because it will help establish context. Blogging about what I know does not mean that I’m not honing my R (and github) skill set.</description>
-    </item>
-    
-    <item>
-      <title>Setting the Bar for 2018</title>
-      <link>/2018/01/first-post/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/first-post/</guid>
-      <description>This new blog has a single purpose: To document my attempt to deploy a neural network in order to ethically address at least one issue faced by juvenile justice professionals and justice involved youth by December 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</description>
     </item>
     
   </channel>
