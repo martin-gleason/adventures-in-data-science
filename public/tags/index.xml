@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>#Rstats</title>
+      <link>/tags/#rstats/</link>
+      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/#rstats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>All Comics Considered</title>
+      <link>/tags/all-comics-considered/</link>
+      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/all-comics-considered/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Beloit</title>
@@ -30,9 +48,18 @@
     </item>
     
     <item>
+      <title>Dorkadia</title>
+      <link>/tags/dorkadia/</link>
+      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dorkadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>How To</title>
       <link>/tags/how-to/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/how-to/</guid>
       <description></description>
@@ -62,6 +89,24 @@
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stats</title>
+      <link>/tags/stats/</link>
+      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/stats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Why</title>
+      <link>/tags/why/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/why/</guid>
       <description></description>
     </item>
     
