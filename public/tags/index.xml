@@ -39,11 +39,29 @@
     </item>
     
     <item>
+      <title>Blogging</title>
+      <link>/tags/blogging/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Case Management</title>
       <link>/tags/case-management/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/case-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Community</title>
+      <link>/tags/community/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/community/</guid>
       <description></description>
     </item>
     
@@ -57,11 +75,47 @@
     </item>
     
     <item>
+      <title>Dataset</title>
+      <link>/tags/dataset/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dataset/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Dorkadia</title>
       <link>/tags/dorkadia/</link>
       <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/dorkadia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eda</title>
+      <link>/tags/eda/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/eda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Educator</title>
+      <link>/tags/educator/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/educator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experimentation</title>
+      <link>/tags/experimentation/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/experimentation/</guid>
       <description></description>
     </item>
     
@@ -89,6 +143,15 @@
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/jems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kaggle</title>
+      <link>/tags/kaggle/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/kaggle/</guid>
       <description></description>
     </item>
     
@@ -125,6 +188,15 @@
       <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/stats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Updates</title>
+      <link>/tags/updates/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/updates/</guid>
       <description></description>
     </item>
     

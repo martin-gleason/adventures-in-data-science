@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Updates on Adventures in Data Science</title>
+    <link>/tags/updates/</link>
+    <description>Recent content in Updates on Adventures in Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/updates/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Understanding and Insight</title>
+      <link>/2018/01/understanding-and-insight/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/understanding-and-insight/</guid>
+      <description>David Robinson is one of my favorite instructors at Datacamp, and he runs a pretty insightful blog of his own. In this post, he details –succinctly I think – the differences between Data Science, Machine Learning, and Artificial Intelligence. I find these kinds of posts to be helpful as I build out my own projects and deepen my understanding of these same topics.
+For example, when it comes to my own projects at the court, my goal is predominately insight.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+---
+title: Understanding and Insight
+author: Martin Gleason, MS
+date: '2018-01-10'
+categories:
+  - Data Science
+  - datacamp
+  - instructor
+  - insight
+  - AI
+tags:
+  - educator
+  - blogging
+  - community
+  - updates
+slug: understanding-and-insight
+
+---
+
+[David Robinson](https://www.datacamp.com/instructors/drobinson) is one of my favorite instructors at Datacamp, and he runs a pretty insightful blog of his own. In this [post](http://varianceexplained.org/r/ds-ml-ai/), he details --succinctly I think -- the differences between Data Science, Machine Learning, and Artificial Intelligence. I find these kinds of posts to be helpful as I build out my own projects and deepen my understanding of these same topics.
+
+For example, when it comes to my own projects at the court, my goal is predominately insight. I want to see how risk and protective factors effect young people. I do not think juvenile justice professionals, or the families we work with, are ready for autonomous predictions and action stemming from data. The insights generated from that data need to be shared, tossed around, torn apart, and reassembled through debate and communication between stakeholders. Right now, all of the data sets I have access to[^1], are sets that I cannot properly share. There can be no debate or communication when the data cannot be shared.[^2]
+
+Insight, however, is the goal for this project. Insight that I need to get permission to share, but insight none the less.
+
+
+
+
+
+[^1]: Diversion data and now 2017 training data. 
+[^2]: Getting permission to reproduce some of the visualizations is actually on the table this week. 

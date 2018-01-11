@@ -6,10 +6,47 @@
     <description>Recent content on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mental Health in Tech EDA</title>
+      <link>/2018/01/mental-health-in-tech-eda/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/mental-health-in-tech-eda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mental Health in Tech: EDA</title>
+      <link>/2018/01/mental-health-in-tech-eda/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/mental-health-in-tech-eda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mental Health in Tech: Early EDA</title>
+      <link>/2018/01/mental-health-in-tech-early-eda/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/mental-health-in-tech-early-eda/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Understanding and Insight</title>
+      <link>/2018/01/understanding-and-insight/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/understanding-and-insight/</guid>
+      <description>David Robinson is one of my favorite instructors at Datacamp, and he runs a pretty insightful blog of his own. In this post, he details –succinctly I think – the differences between Data Science, Machine Learning, and Artificial Intelligence. I find these kinds of posts to be helpful as I build out my own projects and deepen my understanding of these same topics.
+For example, when it comes to my own projects at the court, my goal is predominately insight.</description>
+    </item>
     
     <item>
       <title>The Inevitability of (Missing) Deadlines</title>
@@ -56,6 +93,15 @@ Tomorrow, I’ll share the scripts.</description>
       
       <guid>/2018/01/first-post/</guid>
       <description>This new blog has a single purpose: To document my attempt to deploy a neural network in order to ethically address at least one issue faced by juvenile justice professionals and justice involved youth by December 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/1/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/</guid>
+      <description>Mental Health in Tech: Early EDA       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
   </channel>

@@ -6,10 +6,29 @@
     <description>Recent content in Data Science on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mental Health in Tech: Early EDA</title>
+      <link>/2018/01/mental-health-in-tech-early-eda/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/mental-health-in-tech-early-eda/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Understanding and Insight</title>
+      <link>/2018/01/understanding-and-insight/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/understanding-and-insight/</guid>
+      <description>David Robinson is one of my favorite instructors at Datacamp, and he runs a pretty insightful blog of his own. In this post, he details –succinctly I think – the differences between Data Science, Machine Learning, and Artificial Intelligence. I find these kinds of posts to be helpful as I build out my own projects and deepen my understanding of these same topics.
+For example, when it comes to my own projects at the court, my goal is predominately insight.</description>
+    </item>
     
     <item>
       <title>The Inevitability of (Missing) Deadlines</title>
