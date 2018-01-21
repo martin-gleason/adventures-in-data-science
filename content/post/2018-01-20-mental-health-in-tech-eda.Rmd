@@ -24,10 +24,10 @@ raw_data <- read_csv("/Users/marty/Dropbox (Personal)/survey.csv")
 gender_hist <-  ggplot(raw_data, aes(x = Gender)) + geom_histogram(stat = "count")
 age_gender <- ggplot(raw_data, aes(x = Gender, y = Age)) + geom_point()
 country_leave <- raw_data %>% group_by(Country, leave) %>% count()
-leave_country <- ggplot(country_leave, aes(x = Country, y = leave)) + geom_bar(stat = "identity", aes(fill = leave)) + coord_flip()
+leave_country <- ggplot(country_leave, aes(x = Country)) + geom_bar(stat = "count", aes(fill = leave)) + coord_flip()
 ```
 
-As much fun as reading and online coursework is, at the end of the day, I need to start putting these skills to use. Data set's like `Iris` or `mtcars`, while super fun for training, do not really hold the same place in my heart like data sets involving issues that I deal with at work. Enter [Kaggle](http://kaggle.com). I thought it was mostly about competitions. As it so often happens, I was wrong. Kaggle also hosts data sets, discussion forums, and a jobs board. That's where I found the [Mental Health in Tech survey](https://www.kaggle.com/osmi/mental-health-in-tech-survey). Over the next few days, I'll be exploring this data set and looking to see what kind of insights I can find. Currently, I'm focusing on Country and leave.
+As much fun as reading and online coursework is, at the end of the day, I need to start putting these skills to use. Data set's like `Iris` or `mtcars`, while super fun for training, do not really hold the same place in my heart like data sets involving issues that I deal with at work. Enter [Kaggle](http://kaggle.com). I thought it was mostly about competitions. As it so often happens, I was wrong. Kaggle also hosts data sets, discussion forums, and a jobs board. That's where I found the [Mental Health in Tech survey](https://www.kaggle.com/osmi/mental-health-in-tech-survey). Over the next few days, I'll be exploring this data set and looking to see what kind of insights I can find. Currently, I'm focusing on country and sick leave.
 
 ```{r, echo = F, message = F, include = T, warning = F}
 leave_country
