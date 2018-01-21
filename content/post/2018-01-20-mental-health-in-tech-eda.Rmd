@@ -15,7 +15,7 @@ categories:
 - kaggle
 - Mental health
 ---
-```{r, echo = F, message = F, include = T}
+```{r, echo = F, message = F, include = T, warning = F}
 
 library("tidyverse")
 
