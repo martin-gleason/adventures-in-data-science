@@ -29,6 +29,6 @@ leave_country <- ggplot(country_leave, aes(x = Country, y = leave)) + geom_bar(s
 
 As much fun as reading and online coursework is, at the end of the day, I need to start putting these skills to use. Data set's like `Iris` or `mtcars`, while super fun for training, do not really hold the same place in my heart like data sets involving issues that I deal with at work. Enter [Kaggle](http://kaggle.com). I thought it was mostly about competitions. As it so often happens, I was wrong. Kaggle also hosts data sets, discussion forums, and a jobs board. That's where I found the [Mental Health in Tech survey](https://www.kaggle.com/osmi/mental-health-in-tech-survey). Over the next few days, I'll be exploring this data set and looking to see what kind of insights I can find. Currently, I'm focusing on Country and leave.
 
-```{r, echo = F, message = F, include = T}
+```{r, echo = F, message = F, include = T, warning = F}
 leave_country
 ```
