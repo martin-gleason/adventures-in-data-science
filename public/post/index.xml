@@ -12,30 +12,12 @@
     
     
     <item>
-      <title>Mental Health in Tech EDA</title>
-      <link>/2018/01/mental-health-in-tech-eda/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/mental-health-in-tech-eda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mental Health in Tech: EDA</title>
-      <link>/2018/01/mental-health-in-tech-eda/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/mental-health-in-tech-eda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Mental Health in Tech: Early EDA</title>
       <link>/2018/01/mental-health-in-tech-early-eda/</link>
       <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/01/mental-health-in-tech-early-eda/</guid>
-      <description> </description>
+      <description>## Warning: Ignoring unknown parameters: binwidth, bins, pad As much fun as reading and online coursework is, at the end of the day, I need to start putting these skills to use. Data set’s like Iris or mtcars, while super fun for training, do not really hold the same place in my heart like data sets involving issues that I deal with at work. Enter Kaggle. I thought it was mostly about competitions.</description>
     </item>
     
     <item>
@@ -93,15 +75,6 @@ Tomorrow, I’ll share the scripts.</description>
       
       <guid>/2018/01/first-post/</guid>
       <description>This new blog has a single purpose: To document my attempt to deploy a neural network in order to ethically address at least one issue faced by juvenile justice professionals and justice involved youth by December 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/1/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/1/01/</guid>
-      <description>Mental Health in Tech: Early EDA       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
   </channel>
