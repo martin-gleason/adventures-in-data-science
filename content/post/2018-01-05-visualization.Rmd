@@ -12,7 +12,7 @@ tags:
   - Dorkadia
   - All Comics Considered
   - Stats
-  - '#Rstats'
+  - Rstats
 ---
 ![A Visualization From Podcast Data](/images/likesComparisionACCvDork.jpg)
 I'm one of the hosts of [All Comics Considered](http://allcomicsconsidered.com). One of our favorite partner shows is [Dorkadia](http://dorkadia.com). Given our overlap in staff, topics, and fans, I thought it would be fun to compare our facebook data. So I did. 
