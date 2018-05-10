@@ -6,19 +6,10 @@
     <description>Recent content in Dataset on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/dataset/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Lead and Chicago</title>
-      <link>/2018/01/lead-and-chicago/</link>
-      <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/lead-and-chicago/</guid>
-      <description>## Warning: Duplicated column names deduplicated: &amp;#39;Neighborhood&amp;#39; ## =&amp;gt; &amp;#39;Neighborhood_1&amp;#39; [3], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_2&amp;#39; [4], ## &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_3&amp;#39; [5], &amp;#39;Neighborhood&amp;#39; =&amp;gt; ## &amp;#39;Neighborhood_4&amp;#39; [6], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_5&amp;#39; [7], ## &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_6&amp;#39; [8], &amp;#39;Neighborhood&amp;#39; =&amp;gt; ## &amp;#39;Neighborhood_7&amp;#39; [9], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_8&amp;#39; [10] I am aware that there is a huge outlier in this data set 1, but I needed to push this data set out to win an argument at work.</description>
-    </item>
     
     <item>
       <title>Mental Health in Tech: Early EDA</title>

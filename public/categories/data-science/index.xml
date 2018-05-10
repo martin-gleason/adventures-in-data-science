@@ -6,10 +6,49 @@
     <description>Recent content in Data Science on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mental Health in Tech: Early EDA</title>
+      <link>/2018/01/mental-health-in-tech-early-eda/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/mental-health-in-tech-early-eda/</guid>
+      <description>As much fun as reading and online coursework is, at the end of the day, I need to start putting these skills to use. Data set’s like Iris or mtcars, while super fun for training, do not really hold the same place in my heart like data sets involving issues that I deal with at work. Enter Kaggle. I thought it was mostly about competitions. As it so often happens, I was wrong.</description>
+    </item>
+    
+    <item>
+      <title>Understanding and Insight</title>
+      <link>/2018/01/understanding-and-insight/</link>
+      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/understanding-and-insight/</guid>
+      <description>David Robinson is one of my favorite instructors at Datacamp, and he runs a pretty insightful blog of his own. In this post, he details –succinctly I think – the differences between Data Science, Machine Learning, and Artificial Intelligence. I find these kinds of posts to be helpful as I build out my own projects and deepen my understanding of these same topics.
+For example, when it comes to my own projects at the court, my goal is predominately insight.</description>
+    </item>
+    
+    <item>
+      <title>The Inevitability of (Missing) Deadlines</title>
+      <link>/2018/01/the-inevitability-of-missing-deadlines/</link>
+      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/the-inevitability-of-missing-deadlines/</guid>
+      <description>Friday night is date night. I should not promise to show my work when a date with my wife is on the line. While that post is still on the horizon, I also wanted to share more about my ongoing education in R and statistics. Specifically, that I purchased and have begun reading An Introduction to Statistical Learning. I have the e-book version.
+  Like reading Watchmen for the first time, my plan is to read a chapter a night and do those excercises in the day.</description>
+    </item>
+    
+    <item>
+      <title>Visualization!</title>
+      <link>/2018/01/visualization/</link>
+      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/visualization/</guid>
+      <description>I’m one of the hosts of All Comics Considered. One of our favorite partner shows is Dorkadia. Given our overlap in staff, topics, and fans, I thought it would be fun to compare our facebook data. So I did.
+Tomorrow, I’ll share the scripts.</description>
+    </item>
     
     <item>
       <title>Setting the Bar for 2018</title>

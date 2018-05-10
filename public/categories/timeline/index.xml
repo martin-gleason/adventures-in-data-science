@@ -6,10 +6,29 @@
     <description>Recent content in Timeline on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/timeline/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Inevitability of (Missing) Deadlines</title>
+      <link>/2018/01/the-inevitability-of-missing-deadlines/</link>
+      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/the-inevitability-of-missing-deadlines/</guid>
+      <description>Friday night is date night. I should not promise to show my work when a date with my wife is on the line. While that post is still on the horizon, I also wanted to share more about my ongoing education in R and statistics. Specifically, that I purchased and have begun reading An Introduction to Statistical Learning. I have the e-book version.
+  Like reading Watchmen for the first time, my plan is to read a chapter a night and do those excercises in the day.</description>
+    </item>
+    
+    <item>
+      <title>Marks for Style</title>
+      <link>/2018/01/marks-for-style/</link>
+      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/marks-for-style/</guid>
+      <description>Blogging is old hat to me, but data science is brand new. I’m studying this subject (and a survey of all its componenet parts) like Homer here. This nervous energy is why my first few posts are all about what I do know: Juvenile justice, JEMS, the court, and blogging. Most of these early posts are going to address these topics because it will help establish context. Blogging about what I know does not mean that I’m not honing my R (and github) skill set.</description>
+    </item>
     
     <item>
       <title>Setting the Bar for 2018</title>

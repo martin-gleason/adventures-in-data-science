@@ -1,0 +1,33 @@
+---
+title: Marks for Style
+author: Martin Gleason, MS
+date: '2018-01-04'
+slug: marks-for-style
+categories:
+  - meta
+  - R
+  - R Studio
+  - Timeline
+tags:
+  - how to
+  - why
+---
+
+Blogging is old hat to me, but data science is brand new. I'm studying this subject (and a survey of all its componenet parts) like Homer here. 
+![Wherein I feel, and look, like Homer Simpson](/images/homerStudy.gif)
+This nervous energy is why my first few posts are all about what I do know: Juvenile justice, JEMS, the court, and blogging. Most of these early posts are going to address these topics because it will help establish context. Blogging about what I know does not mean that I'm not honing my R (and github) skill set..
+
+The blog is written in [R Studio](https://www.rstudio.com/) with Yihui Xie's [Blogdown](https://github.com/rstudio/blogdown) package. It's hosted thanks to a combination of github, [Hugo](https://gohugo.io/), and [netlify](https://www.netlify.com/). While the blogdown book has been my goto resource for putting this together, I've also read (and highly recommend):
+  
+  * [Amber Thomas](https://amber.rbind.io/blog/2016/12/19/creatingsite/)
+  * [Alison Presmanes Hill](https://alison.rbind.io/)
+
+The work of those three people is clear, concise, fun, and inspirational.
+
+I am going to try and put up one visualization each week, and use the weekend to delve deeper into my education in stats, R programming, and machine learning. I will also post about my progress as I narrow down the questions I want to answer, and get a clearer picture about how I'll use a neural network[^1] to solve it. If I a lucky, I will also get a few interviews. What's the point in posting all of this if no converations come from it?
+
+Speaking of conversations, now that disqus is working, feel free to leave a comment! I'm looking for all sorts of feedback on this project!
+
+
+[^1]: When I started this project, I briefly considred a classification problem that would probably have benefited from a neural network. In the weeks of research that followed, I decided that it may not be the best fit afterall. But that's a post for next week.
+  
