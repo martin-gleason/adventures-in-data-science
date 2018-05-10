@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>Git</title>
+      <link>/categories/git/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Homebase</title>
       <link>/categories/homebase/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
@@ -224,6 +233,15 @@
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/timeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Version Control</title>
+      <link>/categories/version-control/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/version-control/</guid>
       <description></description>
     </item>
     
