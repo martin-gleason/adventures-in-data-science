@@ -1,0 +1,51 @@
+---
+title: Word Cloud!
+author: Martin Gleason, MS
+date: '2018-05-10'
+slug: word-cloud
+categories:
+  - word cloud
+  - text mining
+tags:
+  - All Comics Considered
+---
+```{r, packages, echo = FALSE, message = FALSE}
+library("plyr")
+library("tidyverse")
+library("wordcloud")
+library("tidytext")
+
+library("googlesheets")
+library("kableExtra")
+
+source("/Users/marty/Dropbox (Personal)/Coding Projects/R/scripts/create_df.R")
+source("/Users/marty/Dropbox (Personal)/Coding Projects/R/scripts/answers_from_column.R")
+
+sheets <- gs_ls()
+
+survey_key<- "1WemMnRJphcI5BPgeSAC8wj40If0foT3BH0o-oUApj-g" #need to find a way to automate this right away. 
+
+register_survey <- gs_key(survey_key)
+survey_full <- gs_read(register_survey)
+survey_anon <- survey_full %>% select(-2)
+emails <- survey_full %>% select(2)
+
+#Brew color
+spectral <- brewer.pal(8, "Spectral")
+
+#sample text work. a2 is answers to question2. the column was named ansers by names(). the output is worsd
+a2 <- survey_anon[2]
+names(a2) <- "answers"
+```
+
+Today, my [podcast](https://allcomicsconsidered.com) launched our [Patreon](https://www.patreon.com/allcomicsconsidered). I had hoped to finish the write of the 2018 Listener Survey analysis I started, but as it turns out, I had a lot of other projects to write up. 
+
+Most of them probation related.
+
+BUT. In honor of the launch and to get back into the swing of things, I present the word cloud from the ACC 2018 Listener Survey. The image below represent the reasons why people listen to our little show, featuring the `tidytext` package from the amazing [Dr. Julia Silge](https://juliasilge.com/).
+
+```{r, wordcloud, include=TRUE, warning=FALSE, echo=TRUE, message=FALSE}
+a2_wordcloud <- a2  %>% unnest_tokens(word, answers) %>% anti_join(stop_words) %>% 
+  count(word) %>% filter(n > 2) %>% 
+  with(wordcloud(word, n, colors = spectral, random.order = FALSE, random.color = FALSE))
+```

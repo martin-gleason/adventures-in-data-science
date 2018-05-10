@@ -6,19 +6,20 @@
     <description>Recent content in All Comics Considered on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/all-comics-considered/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Visualization!</title>
-      <link>/2018/01/visualization/</link>
-      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
+      <title>Word Cloud!</title>
+      <link>/2018/05/word-cloud/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/visualization/</guid>
-      <description>I’m one of the hosts of All Comics Considered. One of our favorite partner shows is Dorkadia. Given our overlap in staff, topics, and fans, I thought it would be fun to compare our facebook data. So I did.
-Tomorrow, I’ll share the scripts.</description>
+      <guid>/2018/05/word-cloud/</guid>
+      <description>Today, my podcast launched our Patreon. I had hoped to finish the write of the 2018 Listener Survey analysis I started, but as it turns out, I had a lot of other projects to write up.
+Most of them probation related.
+BUT. In honor of the launch and to get back into the swing of things, I present the word cloud from the ACC 2018 Listener Survey. The image below represent the reasons why people listen to our little show, featuring the tidytext package from the amazing Dr.</description>
     </item>
     
   </channel>

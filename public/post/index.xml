@@ -6,10 +6,45 @@
     <description>Recent content in Posts on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Word Cloud!</title>
+      <link>/2018/05/word-cloud/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+<<<<<<< HEAD
+      <guid>/2018/05/word-cloud/</guid>
+      <description>Today, my podcast launched our Patreon. I had hoped to finish the write of the 2018 Listener Survey analysis I started, but as it turns out, I had a lot of other projects to write up.
+Most of them probation related.
+BUT. In honor of the launch and to get back into the swing of things, I present the word cloud from the ACC 2018 Listener Survey. The image below represent the reasons why people listen to our little show, featuring the tidytext package from the amazing Dr.</description>
+=======
+      <guid>/2018/02/classification-the-next-step/</guid>
+      <description>I’ve been reading the amazing “An Introduction to Statistical Learning” to bone up on my understanding of statistics. This is one of the areas I need to develop for my project, and I’ve already done most (if not all) of DataCamp’s statistics courses.The first three chapters were challenging but not impossible, again thanks to DataCamp’s courses on regression and machine learning.
+Yet Another Certificate!
+ The real benefit of this book has been helping me focus on what I need to do in order to develop this data product.</description>
+    </item>
+    
+    <item>
+      <title>Lead and Chicago</title>
+      <link>/2018/01/lead-and-chicago/</link>
+      <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/lead-and-chicago/</guid>
+      <description>## Warning: Duplicated column names deduplicated: &amp;#39;Neighborhood&amp;#39; ## =&amp;gt; &amp;#39;Neighborhood_1&amp;#39; [3], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_2&amp;#39; [4], ## &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_3&amp;#39; [5], &amp;#39;Neighborhood&amp;#39; =&amp;gt; ## &amp;#39;Neighborhood_4&amp;#39; [6], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_5&amp;#39; [7], ## &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_6&amp;#39; [8], &amp;#39;Neighborhood&amp;#39; =&amp;gt; ## &amp;#39;Neighborhood_7&amp;#39; [9], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_8&amp;#39; [10] I am aware that there is a huge outlier in this data set 1, but I needed to push this data set out to win an argument at work.</description>
+    </item>
+    
+    <item>
+      <title>OYAS and YASI</title>
+      <link>/2018/01/oyas-and-yasi/</link>
+      <pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/01/oyas-and-yasi/</guid>
+      <description>My department currently uses a risk assessment tool called the YASI. This tool is supposed to help officers classify levels of risk and guide case planning. This was not a tool I ever used, as it was never validated for sexually aggressive juveniles. We will be shifting to the Ohio Youth Assessment System(OYAS) in the near future. As a trainer, it will be my responsibility to learn this new tool. In reading the new scoring guide, I cannot help but ask the following questions:</description>
+    </item>
     
     <item>
       <title>Mental Health in Tech: Early EDA</title>
@@ -75,6 +110,7 @@ Tomorrow, I’ll share the scripts.</description>
       
       <guid>/2018/01/first-post/</guid>
       <description>This new blog has a single purpose: To document my attempt to deploy a neural network in order to ethically address at least one issue faced by juvenile justice professionals and justice involved youth by December 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</description>
+>>>>>>> parent of c6ad738... First real save with : Select all, space bar
     </item>
     
   </channel>

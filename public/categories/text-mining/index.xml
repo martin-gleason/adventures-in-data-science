@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Text Mining on Adventures in Data Science</title>
+    <link>/categories/text-mining/</link>
+    <description>Recent content in Text Mining on Adventures in Data Science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/text-mining/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Word Cloud!</title>
+      <link>/2018/05/word-cloud/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/word-cloud/</guid>
+      <description>Today, my podcast launched our Patreon. I had hoped to finish the write of the 2018 Listener Survey analysis I started, but as it turns out, I had a lot of other projects to write up.
+Most of them probation related.
+BUT. In honor of the launch and to get back into the swing of things, I present the word cloud from the ACC 2018 Listener Survey. The image below represent the reasons why people listen to our little show, featuring the tidytext package from the amazing Dr.</description>
+    </item>
+    
+  </channel>
+</rss>

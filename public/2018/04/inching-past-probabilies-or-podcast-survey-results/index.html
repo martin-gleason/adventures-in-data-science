@@ -1,0 +1,926 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.33 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Inching past Probabilies or Podcast Survey Results</title>
+    <meta name="author" content="Martin Gleason, MS">
+    <meta name="keywords" content=", R, Juvenile Justice, data science, social good">
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+    <meta name="description" content="Probablity is not (yet) my jam. Left to my own devices, I would simply take tutorial after tutorial, class after class, and read book after book. Thankfully, I have an amazing friend who told me to start going to Meetups. So I attended a tutorial hosted by Raja Iqbal, and learned one key lesson: Show your work.
+The work, in this case, is demonstrating how I pulled survey results from Google, cleaned it, and started visualizing it.">
+    <meta property="og:description" content="Probablity is not (yet) my jam. Left to my own devices, I would simply take tutorial after tutorial, class after class, and read book after book. Thankfully, I have an amazing friend who told me to start going to Meetups. So I attended a tutorial hosted by Raja Iqbal, and learned one key lesson: Show your work.
+The work, in this case, is demonstrating how I pulled survey results from Google, cleaned it, and started visualizing it.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Inching past Probabilies or Podcast Survey Results">
+    <meta property="og:url" content="/2018/04/inching-past-probabilies-or-podcast-survey-results/">
+    <meta property="og:site_name" content="Adventures in Data Science">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Adventures in Data Science">
+    <meta name="twitter:description" content="Probablity is not (yet) my jam. Left to my own devices, I would simply take tutorial after tutorial, class after class, and read book after book. Thankfully, I have an amazing friend who told me to start going to Meetups. So I attended a tutorial hosted by Raja Iqbal, and learned one key lesson: Show your work.
+The work, in this case, is demonstrating how I pulled survey results from Google, cleaned it, and started visualizing it.">
+    
+      <meta name="twitter:creator" content="@officergleason">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="/images/DREAMDEEP.jpg">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-82920409-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Adventures in Data Science</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/images/DREAMDEEP.jpg" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/images/DREAMDEEP.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Martin Gleason, MS</h4>
+        
+          <h5 class="sidebar-profile-bio">Juvenile Probation Officer, Aspiring Data Scientist</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/martin-gleason">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/4521156">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Inching past Probabilies or Podcast Survey Results
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-04-17T00:00:00Z">
+        
+  April 17, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/meetup">meetup</a>, 
+    
+      <a class="category-link" href="/categories/podcast">podcast</a>, 
+    
+      <a class="category-link" href="/categories/rstats">RStats</a>, 
+    
+      <a class="category-link" href="/categories/text-mining">text mining</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Probablity is not (yet) my jam. Left to my own devices, I would simply take tutorial after tutorial, class after class, and read book after book. Thankfully, I have an amazing friend who told me to start going to <a href="https://www.meetup.com/data-science-dojo-chicago/events/247965706/">Meetups</a>. So I attended a tutorial hosted by <a href="https://datasciencedojo.com">Raja Iqbal</a>, and learned one key lesson: Show your work.</p>
+<p>The work, in this case, is demonstrating how I pulled survey results from Google, cleaned it, and started visualizing it. While this project is not directly related to developing machine learning tools for risk classification, it has given me a better undresetanding of the process of loading, cleaning, and visualizing real world (and useful) data.</p>
+<div id="the-survey" class="section level1">
+<h1>The Survey</h1>
+<p>In preperation for launching a crowd-fund solution, my <a href="https://allcomicsconsidered.com">podcast</a> crew and I decided to ask our fans what we should do to improve our show. So we put a <a href="https://goo.gl/forms/LXkXXiJMvdSi0fpl2">form</a> together and asked the following questions:</p>
+<pre><code>##  [1] &quot;Email Address&quot;                                                                             
+##  [2] &quot;Why do you listen to the show? Pick all the reasons that apply.&quot;                           
+##  [3] &quot;What do you like us to talk about? Pick all the topics you like&quot;                           
+##  [4] &quot;How did you hear about All Comics Considered?&quot;                                             
+##  [5] &quot;How do you listen to All Comics Considered?&quot;                                               
+##  [6] &quot;Is there another podcast platform that you&#39;d prefer?&quot;                                      
+##  [7] &quot;What other podcasts do you listen to?&quot;                                                     
+##  [8] &quot;Do you listen to podcasts on YouTube?&quot;                                                     
+##  [9] &quot;What other podcast or comic book based communities do you participate in?&quot;                 
+## [10] &quot;What makes you want to turn All Comics Considered off?&quot;                                    
+## [11] &quot;How would you describe All Comics Considered to someone else?&quot;                             
+## [12] &quot;Do you suggest All Comics Considered to friends?  Why or why not?&quot;                         
+## [13] &quot;Have you read the All Comics Considered blog in the past?&quot;                                 
+## [14] &quot;Would you be interested in more written content?&quot;                                          
+## [15] &quot;How much do you like the Pullbox Feature?&quot;                                                 
+## [16] &quot;What would improve the Pullbox Feature?&quot;                                                   
+## [17] &quot;How much do you enjoy our deep dive features into specific comics, properties, and issues?&quot;
+## [18] &quot;How much do you enjoy our shorter, more comedic segments?&quot;                                 
+## [19] &quot;How do you feel about the length of the show?&quot;                                             
+## [20] &quot;What format changes might you be interested in seeing come to the show?&quot;</code></pre>
+<p>26 people responded to these question. Google Forms has some simple analytics built into the platform, and given the number of responses, a good deal of the insights we gathered from our survey was pulled from that front page. But pulling insights from a form was not how I wanted to access the responses. So I took the opportunity this survey created to see how well I could use R to pull the data.</p>
+</div>
+<div id="making-it-more-complicated" class="section level1">
+<h1>Making it More Complicated</h1>
+<p>The first step was determining which package I should use to pull the responses. It took a grand total of two minutes to decide on the package: <code>googlesheets</code>. This <a href="https://cran.r-project.org/web/packages/googlesheets/index.html">package</a>, by <a href="https://github.com/jennybc/googlesheets">Jennifer Bryan</a> and Joanna Zhao, has simple, clear, and consistent syntax. Once my <a href="https://rawgit.com/jennybc/googlesheets/master/vignettes/managing-auth-tokens.html">Google credentials</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> were authenticated, pulling data from the sheets was a breeze. The function <code>gs_ls()</code> pulled a list of my sheets into a tibble, which made finding the key to the survey responses as simple as: <code>gs_ls %&gt;% filter(str_detect(sheet_title, &quot;All Comics Considered: 2018&quot;)) %&gt;% select(sheet_key) %&gt;% as.character()</code>.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>Armed with the key, I pulled the survey resultls into a single tibble:</p>
+<pre class="r"><code>register_survey &lt;- gs_key(survey_key)
+survey_full &lt;- gs_read(register_survey)
+survey_anon &lt;- survey_full %&gt;% select(-2)</code></pre>
+<p>This could have been collapsed into one line of code, which I write in footnote 2. Both methods produce the following table. I have limited the number of responses by only displaying the first two responses by limiting <code>head</code> to 2:</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:100%; overflow-x: scroll; width:100%; ">
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tibble">Table 1: </span>Overwhelming Table
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Timestamp
+</th>
+<th style="text-align:left;">
+Why do you listen to the show? Pick all the reasons that apply.
+</th>
+<th style="text-align:left;">
+What do you like us to talk about? Pick all the topics you like
+</th>
+<th style="text-align:left;">
+How did you hear about All Comics Considered?
+</th>
+<th style="text-align:left;">
+How do you listen to All Comics Considered?
+</th>
+<th style="text-align:left;">
+Is there another podcast platform that you’d prefer?
+</th>
+<th style="text-align:left;">
+What other podcasts do you listen to?
+</th>
+<th style="text-align:left;">
+Do you listen to podcasts on YouTube?
+</th>
+<th style="text-align:left;">
+What other podcast or comic book based communities do you participate in?
+</th>
+<th style="text-align:left;">
+What makes you want to turn All Comics Considered off?
+</th>
+<th style="text-align:left;">
+How would you describe All Comics Considered to someone else?
+</th>
+<th style="text-align:left;">
+Do you suggest All Comics Considered to friends? Why or why not?
+</th>
+<th style="text-align:left;">
+Have you read the All Comics Considered blog in the past?
+</th>
+<th style="text-align:left;">
+Would you be interested in more written content?
+</th>
+<th style="text-align:right;">
+How much do you like the Pullbox Feature?
+</th>
+<th style="text-align:left;">
+What would improve the Pullbox Feature?
+</th>
+<th style="text-align:right;">
+How much do you enjoy our deep dive features into specific comics, properties, and issues?
+</th>
+<th style="text-align:right;">
+How much do you enjoy our shorter, more comedic segments?
+</th>
+<th style="text-align:right;">
+How do you feel about the length of the show?
+</th>
+<th style="text-align:left;">
+What format changes might you be interested in seeing come to the show?
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+3/3/2018 20:14:32
+</td>
+<td style="text-align:left;">
+Timely and relevant content., Social relevance., The selection of books talked about.
+</td>
+<td style="text-align:left;">
+Comics TV, Comic Movies, Historical comic titles, Social Justice Issues in Comics
+</td>
+<td style="text-align:left;">
+facebook
+</td>
+<td style="text-align:left;">
+Google Play
+</td>
+<td style="text-align:left;">
+itunes
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+itchy
+</td>
+<td style="text-align:left;">
+sure
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Full episodes about a single topic
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3/3/2018 20:30:15
+</td>
+<td style="text-align:left;">
+Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., The best show I have found for balancing love of the medium with a commitment to keeping its feet to the fire when it comes to representation.
+</td>
+<td style="text-align:left;">
+Comics TV, Comic Movies, Ongoing comic titles, Historical comic titles, Social Justice Issues in Comics, Ourselves, I think you have the balance right now. Being album to compare the scenarios in different comics to aspects of your own life makes your analysis more grounded.
+</td>
+<td style="text-align:left;">
+Websearch. Serendipity.
+</td>
+<td style="text-align:left;">
+iTunes
+</td>
+<td style="text-align:left;">
+I use Otto occasionally. Mainly iTunes
+</td>
+<td style="text-align:left;">
+Where to start: 95BFM; Adventure: A dungeons and dragons podcast; All in the mind; All songs considered; RNZ At the movies; Book Riot; Can He Do That?; Talking Comic; Freakonomics Radio; Fresh Air; Gone by Lunchtime; Larry Wilmore; Mental Illness Happy Hour; NPR Politics Podcast; On One with Angela Rye; Pod Save America; Pod Save the World; Pop Culture Happy Hour; Race Invaders; Still ProcessingThe Ezra Klein Show; Up, Up and Away; WTF with Marc Maron; Women of Marvel
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+I listen to a lot of Podcasts, but this is the only one I really interact with on Facebook etc.
+</td>
+<td style="text-align:left;">
+Nothing.
+</td>
+<td style="text-align:left;">
+Smart, witty, great coverage of the intersection of politics and comics.
+</td>
+<td style="text-align:left;">
+I’ve actually included the podcast in a ‘recommended’ list on a radio spot I used to do for my local student radio station.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+I like the idea of regular Deep Cuts (great story arcs from the past)
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Full episodes about a single topic
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This table violates one of the most critical lessons I learned in grad school: The values are not atomic. In other words, the answer to the question <code>names(survey_anon[2])</code> have more than one answer per respondant:</p>
+<pre><code>##  [1] &quot;Timely and relevant content., Social relevance., The selection of books talked about.&quot;                                                                                                                                                                                    
+##  [2] &quot;Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., The best show I have found for balancing love of the medium with a commitment to keeping its feet to the fire when it comes to representation.&quot;
+##  [3] &quot;Banter between hosts., Social relevance., The selection of books talked about., Interviews.&quot;                                                                                                                                                                              
+##  [4] &quot;Banter between hosts., Social relevance., Interviews.&quot;                                                                                                                                                                                                                    
+##  [5] &quot;Banter between hosts., Social relevance., The selection of books talked about.&quot;                                                                                                                                                                                           
+##  [6] &quot;Banter between hosts., The selection of books talked about.&quot;                                                                                                                                                                                                              
+##  [7] &quot;Timely and relevant content., Banter between hosts., Social relevance.&quot;                                                                                                                                                                                                   
+##  [8] &quot;Banter between hosts., Social relevance.&quot;                                                                                                                                                                                                                                 
+##  [9] &quot;Timely and relevant content., Banter between hosts., Social relevance., Interviews.&quot;                                                                                                                                                                                      
+## [10] &quot;Timely and relevant content., Banter between hosts.&quot;                                                                                                                                                                                                                      
+## [11] &quot;Timely and relevant content., Banter between hosts., Social relevance., Interviews., Perspective and theory&quot;                                                                                                                                                              
+## [12] &quot;Banter between hosts., Social relevance.&quot;                                                                                                                                                                                                                                 
+## [13] &quot;Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., Pretending that your office is a fun place full of friends is nice.&quot;                                                                           
+## [14] &quot;Timely and relevant content., Social relevance.&quot;                                                                                                                                                                                                                          
+## [15] &quot;Banter between hosts., Social relevance., Interviews.&quot;                                                                                                                                                                                                                    
+## [16] &quot;Banter between hosts., The selection of books talked about., Interviews.&quot;                                                                                                                                                                                                 
+## [17] &quot;The selection of books talked about., Interviews.&quot;                                                                                                                                                                                                                        
+## [18] &quot;Timely and relevant content., Banter between hosts.&quot;                                                                                                                                                                                                                      
+## [19] &quot;Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews.&quot;                                                                                                                                                
+## [20] &quot;Banter between hosts., Social relevance., The selection of books talked about., To privately laugh at Marty without hurting his feelings.&quot;                                                                                                                                
+## [21] &quot;Timely and relevant content., Banter between hosts., Interviews.&quot;                                                                                                                                                                                                         
+## [22] &quot;Timely and relevant content., Social relevance.&quot;                                                                                                                                                                                                                          
+## [23] &quot;Timely and relevant content., The selection of books talked about.&quot;                                                                                                                                                                                                       
+## [24] &quot;Timely and relevant content., Social relevance.&quot;                                                                                                                                                                                                                          
+## [25] &quot;The selection of books talked about.&quot;                                                                                                                                                                                                                                     
+## [26] &quot;Timely and relevant content., Social relevance., The selection of books talked about.&quot;</code></pre>
+<p>In addition to the multiple answers per item, we also had a few likard scale questions to capture other feelings about the show. In otherwordsm, our data was a hot mess. Google made it easy to get our basic answers, but if we wanted to use anything other than their tools, there would be a lot of work to clean it up. Which, to be fair, was exactly what I wanted to do.</p>
+</div>
+<div id="cleaning" class="section level1">
+<h1>Cleaning</h1>
+<<<<<<< HEAD
+<p>With <a href="https://datacamp.com">Data Camp</a>, one usually has a way to check their work. With our podcast survey, there is a guide in the form of Google’s visiualizations, but nothing about intermediate steps of cleaning or tidying. In order to get any insights from this data, I was going to have tidy it myself.</p>
+<p>My first step was to identify any pattern in the responses to pull out individual answers. That was fairly easy for most of the questions, as the default character in Forms is <code>&quot;,&quot;</code>. My solution was to use the <code>tidyverse</code> packages, namely <code>dplyr</code> and <code>stringr</code> to find unique answers per question. I experimented in the console, building out a solution that would work with one column.</p>
+<pre class="r"><code>survey_anon %&gt;% select(2) %&gt;% pull() %&gt;% 
+  str_split(pattern = &quot;,&quot;) %&gt;% 
+  unlist %&gt;% 
+  str_trim() %&gt;% 
+unique()</code></pre>
+<p>Once that worked, I made a function that would pull unique phrases:</p>
+<pre class="r"><code>    answers_from_column &lt;- function(x, pattern = &quot;,&quot;, ...)
+      answers &lt;- x %&gt;% pull() %&gt;% 
+        str_split(pattern) %&gt;% 
+        unlist %&gt;% 
+        str_trim() %&gt;% 
+      unique()
+    return(answers)</code></pre>
+<p>Running that code works brilliantly if you use <code>select</code> to get a particular column. If, however, the goal was was to use pipes or to use a vector instead of a table, the function crashes. Hard.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> So I added additional logic to make this function more robust:</p>
+<pre class="r"><code>answers_from_column &lt;- function(x, pattern = &quot;,&quot;, ...){
+  if(!is.data.frame(x)){
+    answers &lt;- x %&gt;% 
+      str_split(pattern) %&gt;% 
+      unlist %&gt;% 
+      str_trim() %&gt;% 
+      unique()
+    
+  }
+  else {
+    answers &lt;- x %&gt;% 
+      pull() %&gt;% 
+      str_split(pattern) %&gt;% 
+      unlist %&gt;% 
+      str_trim() %&gt;% 
+      unique()
+  }
+
+  return(answers)
+}</code></pre>
+<p>This newer, more robust function works on vectors as well as data frames, supports pipes, and can take a different pattern argument. I’m sure it needs more work, but, for</p>
+=======
+<p>With <a href="https://datacamp.com">Data Camp</a>, one usually has a way to check their work. With our podcast survey, there was a guide from Google’s visiualizations, but nothing about intermediate steps of cleaning or tidying.</p>
+>>>>>>> parent of f42bd98... "update the toml.cofig file to allow for previews again. remove test posts/pdf conversion"
+<pre class="r"><code>a2_wordcloud &lt;- a2  %&gt;% unnest_tokens(word, answers) %&gt;% anti_join(stop_words) %&gt;% 
+  count(word) %&gt;% filter(n &gt; 5) %&gt;% 
+  with(wordcloud(word, n, colors = spectral, random.order = FALSE, random.color = FALSE))</code></pre>
+<p><img src="/post/2018-05-01-inching-past-probability-or-the-acc-2018-listener-survey_files/figure-html/wordcloud-1.png" width="672" /></p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Jennifer’s vingette explains authentication, where tokens live, and everything you wanted to know about how the package works.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>I was not, originally, so clever with my code. First I stored my sheets in a tibble like so, <code>sheets &lt;- gs_ls()</code>, then I may have cut and pasted instead of using <code>stringr</code> and <code>as.character()</code>. Writing this article now, I realize it could have been as easy as <code>gs_ls() %&gt;% filter(str_detect(sheet_title, &quot;All Comics Considered: 2018&quot;)) %&gt;% select(sheet_key) %&gt;% as.character() %&gt;% gs_key() %&gt;% gs_read()</code>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>I also re-learned something while writing this blog post; specifically that code blocks with the option <code>eval = TRUE</code> will over-write other functions and make life even more difficult.<a href="#fnref3">↩</a></p></li>
+</ol>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/all-comics-considered/">All Comics Considered</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="../../../2018/05/word-cloud/" data-tooltip="Word Cloud!">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/martingleason%25!%28EXTRA%20string=/2018/04/inching-past-probabilies-or-podcast-survey-results/%29">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/officergleason%25!%28EXTRA%20string=/2018/04/inching-past-probabilies-or-podcast-survey-results/%29">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Martin Gleason, MS. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="../../../2018/05/word-cloud/" data-tooltip="Word Cloud!">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/martingleason%25!%28EXTRA%20string=/2018/04/inching-past-probabilies-or-podcast-survey-results/%29">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/officergleason%25!%28EXTRA%20string=/2018/04/inching-past-probabilies-or-podcast-survey-results/%29">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/martingleason%25!%28EXTRA%20string=%2F2018%2F04%2Finching-past-probabilies-or-podcast-survey-results%2F%29">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/officergleason%25!%28EXTRA%20string=%2F2018%2F04%2Finching-past-probabilies-or-podcast-survey-results%2F%29">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/images/DREAMDEEP.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Martin Gleason, MS</h4>
+    
+      <div id="about-card-bio">Juvenile Probation Officer, Aspiring Data Scientist</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Probation Officer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Chicago, Illinois
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+<<<<<<< HEAD
+              <a class="link-unstyled" href="../../../2018/05/word-cloud/">
+                <h3 class="media-heading">Word Cloud!</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Today, my podcast launched our Patreon. I had hoped to finish the write of the 2018 Listener Survey analysis I started, but as it turns out, I had a lot of other projects to write up.
+Most of them probation related.
+BUT. In honor of the launch and to get back into the swing of things, I present the word cloud from the ACC 2018 Listener Survey. The image below represent the reasons why people listen to our little show, featuring the tidytext package from the amazing Dr.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="../../../2018/04/inching-past-probabilies-or-podcast-survey-results/">
+=======
+              <a class="link-unstyled" href="/2018/04/inching-past-probabilies-or-podcast-survey-results/">
+>>>>>>> parent of f42bd98... "update the toml.cofig file to allow for previews again. remove test posts/pdf conversion"
+                <h3 class="media-heading">Inching past Probabilies or Podcast Survey Results</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Apr 4, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Probablity is not (yet) my jam. Left to my own devices, I would simply take tutorial after tutorial, class after class, and read book after book. Thankfully, I have an amazing friend who told me to start going to Meetups. So I attended a tutorial hosted by Raja Iqbal, and learned one key lesson: Show your work.
+The work, in this case, is demonstrating how I pulled survey results from Google, cleaned it, and started visualizing it.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         2 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/bean.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2018\/04\/inching-past-probabilies-or-podcast-survey-results\/';
+          
+            this.page.identifier = '\/2018\/04\/inching-past-probabilies-or-podcast-survey-results\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'adventures-in-data-science';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+

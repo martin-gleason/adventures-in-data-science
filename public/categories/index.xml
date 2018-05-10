@@ -6,215 +6,25 @@
     <description>Recent content in Categories on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ai</title>
-      <link>/categories/ai/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
+      <title>Text Mining</title>
+      <link>/categories/text-mining/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ai/</guid>
+      <guid>/categories/text-mining/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Data Science</title>
-      <link>/categories/data-science/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      <title>Word Cloud</title>
+      <link>/categories/word-cloud/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/categories/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datacamp</title>
-      <link>/categories/datacamp/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/datacamp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Eda</title>
-      <link>/categories/eda/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/eda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Education</title>
-      <link>/categories/education/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/education/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggplot</title>
-      <link>/categories/ggplot/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ggplot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Homebase</title>
-      <link>/categories/homebase/</link>
-      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/homebase/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Insight</title>
-      <link>/categories/insight/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/insight/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Instructor</title>
-      <link>/categories/instructor/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/instructor/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jems</title>
-      <link>/categories/jems/</link>
-      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/jems/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Juvenile Justice</title>
-      <link>/categories/juvenile-justice/</link>
-      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/juvenile-justice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kaggle</title>
-      <link>/categories/kaggle/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/kaggle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Learning</title>
-      <link>/categories/learning/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>/categories/machine-learning/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mental Health</title>
-      <link>/categories/mental-health/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/mental-health/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meta</title>
-      <link>/categories/meta/</link>
-      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/meta/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Podcasting</title>
-      <link>/categories/podcasting/</link>
-      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/podcasting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project</title>
-      <link>/categories/project/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R Studio</title>
-      <link>/categories/r-studio/</link>
-      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/r-studio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rstats</title>
-      <link>/categories/rstats/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/rstats/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Statistics</title>
-      <link>/categories/statistics/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/statistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Timeline</title>
-      <link>/categories/timeline/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/timeline/</guid>
+      <guid>/categories/word-cloud/</guid>
       <description></description>
     </item>
     

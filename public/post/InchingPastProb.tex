@@ -1,0 +1,406 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Inching past Probabilies or Podcast Survey Results},
+            pdfauthor={Martin Gleason, MS},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Inching past Probabilies or Podcast Survey Results}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{Martin Gleason, MS}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2018-04-17}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+
+\begin{document}
+\maketitle
+
+Probablity is not (yet) my jam. Left to my own devices, I would simply
+take tutorial after tutorial, class after class, and read book after
+book. Thankfully, I have an amazing friend who told me to start going to
+\href{https://www.meetup.com/data-science-dojo-chicago/events/247965706/}{Meetups}.
+So I attended a tutorial hosted by
+\href{https://datasciencedojo.com}{Raja Iqbal}, and learned one key
+lesson: Show your work.
+
+The work, in this case, is demonstrating how I pulled survey results
+from Google, cleaned it, and started visualizing it. While this project
+is not directly related to developing machine learning tools for risk
+classification, it has given me a better undresetanding of the process
+of loading, cleaning, and visualizing real world (and useful) data.
+
+\section{The Survey}\label{the-survey}
+
+In preperation for launching a crowd-fund solution, my
+\href{https://allcomicsconsidered.com}{podcast} crew and I decided to
+ask our fans what we should do to improve our show. So we put a
+\href{https://goo.gl/forms/LXkXXiJMvdSi0fpl2}{form} together and asked
+the following questions:
+
+\begin{verbatim}
+##  [1] "Email Address"                                                                             
+##  [2] "Why do you listen to the show? Pick all the reasons that apply."                           
+##  [3] "What do you like us to talk about? Pick all the topics you like"                           
+##  [4] "How did you hear about All Comics Considered?"                                             
+##  [5] "How do you listen to All Comics Considered?"                                               
+##  [6] "Is there another podcast platform that you'd prefer?"                                      
+##  [7] "What other podcasts do you listen to?"                                                     
+##  [8] "Do you listen to podcasts on YouTube?"                                                     
+##  [9] "What other podcast or comic book based communities do you participate in?"                 
+## [10] "What makes you want to turn All Comics Considered off?"                                    
+## [11] "How would you describe All Comics Considered to someone else?"                             
+## [12] "Do you suggest All Comics Considered to friends?  Why or why not?"                         
+## [13] "Have you read the All Comics Considered blog in the past?"                                 
+## [14] "Would you be interested in more written content?"                                          
+## [15] "How much do you like the Pullbox Feature?"                                                 
+## [16] "What would improve the Pullbox Feature?"                                                   
+## [17] "How much do you enjoy our deep dive features into specific comics, properties, and issues?"
+## [18] "How much do you enjoy our shorter, more comedic segments?"                                 
+## [19] "How do you feel about the length of the show?"                                             
+## [20] "What format changes might you be interested in seeing come to the show?"
+\end{verbatim}
+
+26 people responded to these question. Google Forms has some simple
+analytics built into the platform, and given the number of responses, a
+good deal of the insights we gathered from our survey was pulled from
+that front page. But pulling insights from a form was not how I wanted
+to access the responses. So I took the opportunity this survey created
+to see how well I could use R to pull the data.
+
+\section{Making it More Complicated}\label{making-it-more-complicated}
+
+The first step was determining which package I should use to pull the
+responses. It took a grand total of two minutes to decide on the
+package: \texttt{googlesheets}. This
+\href{https://cran.r-project.org/web/packages/googlesheets/index.html}{package},
+by \href{https://github.com/jennybc/googlesheets}{Jennifer Bryan} and
+Joanna Zhao, has simple, clear, and consistent syntax. Once my
+\href{https://rawgit.com/jennybc/googlesheets/master/vignettes/managing-auth-tokens.html}{Google
+credentials}\footnote{Jennifer's vingette explains authentication, where
+  tokens live, and everything you wanted to know about how the package
+  works.} were authenticated, pulling data from the sheets was a breeze.
+The function \texttt{gs\_ls()} pulled a list of my sheets into a tibble,
+which made finding the key to the survey responses as simple as:
+\texttt{gs\_ls\ \%\textgreater{}\%\ filter(str\_detect(sheet\_title,\ "All\ Comics\ Considered:\ 2018"))\ \%\textgreater{}\%\ select(sheet\_key)\ \%\textgreater{}\%\ as.character()}.\footnote{I
+  was not, originally, so clever with my code. First I stored my sheets
+  in a tibble like so, \texttt{sheets\ \textless{}-\ gs\_ls()}, then I
+  may have cut and pasted instead of using \texttt{stringr} and
+  \texttt{as.character()}. Writing this article now, I realize it could
+  have been as easy as
+  \texttt{gs\_ls()\ \%\textgreater{}\%\ filter(str\_detect(sheet\_title,\ "All\ Comics\ Considered:\ 2018"))\ \%\textgreater{}\%\ select(sheet\_key)\ \%\textgreater{}\%\ as.character()\ \%\textgreater{}\%\ gs\_key()\ \%\textgreater{}\%\ gs\_read()}.}
+
+Armed with the key, I pulled the survey resultls into a single tibble:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{register_survey <-}\StringTok{ }\KeywordTok{gs_key}\NormalTok{(survey_key)}
+\NormalTok{survey_full <-}\StringTok{ }\KeywordTok{gs_read}\NormalTok{(register_survey)}
+\NormalTok{survey_anon <-}\StringTok{ }\NormalTok{survey_full }\OperatorTok{%>%}\StringTok{ }\KeywordTok{select}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+This could have been collapsed into one line of code, which I write in
+footnote 2. Both methods produce the following table
+
+Overwhelming Table
+
+Timestamp
+
+Why do you listen to the show? Pick all the reasons that apply.
+
+What do you like us to talk about? Pick all the topics you like
+
+How did you hear about All Comics Considered?
+
+How do you listen to All Comics Considered?
+
+Is there another podcast platform that you'd prefer?
+
+What other podcasts do you listen to?
+
+Do you listen to podcasts on YouTube?
+
+What other podcast or comic book based communities do you participate
+in?
+
+What makes you want to turn All Comics Considered off?
+
+How would you describe All Comics Considered to someone else?
+
+Do you suggest All Comics Considered to friends? Why or why not?
+
+Have you read the All Comics Considered blog in the past?
+
+Would you be interested in more written content?
+
+How much do you like the Pullbox Feature?
+
+What would improve the Pullbox Feature?
+
+How much do you enjoy our deep dive features into specific comics,
+properties, and issues?
+
+How much do you enjoy our shorter, more comedic segments?
+
+How do you feel about the length of the show?
+
+What format changes might you be interested in seeing come to the show?
+
+3/3/2018 20:14:32
+
+Timely and relevant content., Social relevance., The selection of books
+talked about.
+
+Comics TV, Comic Movies, Historical comic titles, Social Justice Issues
+in Comics
+
+facebook
+
+Google Play
+
+itunes
+
+NA
+
+Yes
+
+NA
+
+NA
+
+itchy
+
+sure
+
+Yes
+
+Yes
+
+5
+
+NA
+
+5
+
+5
+
+3
+
+Full episodes about a single topic
+
+3/3/2018 20:30:15
+
+Timely and relevant content., Banter between hosts., Social relevance.,
+The selection of books talked about., Interviews., The best show I have
+found for balancing love of the medium with a commitment to keeping its
+feet to the fire when it comes to representation.
+
+Comics TV, Comic Movies, Ongoing comic titles, Historical comic titles,
+Social Justice Issues in Comics, Ourselves, I think you have the balance
+right now. Being album to compare the scenarios in different comics to
+aspects of your own life makes your analysis more grounded.
+
+Websearch. Serendipity.
+
+iTunes
+
+I use Otto occasionally. Mainly iTunes
+
+Where to start: 95BFM; Adventure: A dungeons and dragons podcast; All in
+the mind; All songs considered; RNZ At the movies; Book Riot; Can He Do
+That?; Talking Comic; Freakonomics Radio; Fresh Air; Gone by Lunchtime;
+Larry Wilmore; Mental Illness Happy Hour; NPR Politics Podcast; On One
+with Angela Rye; Pod Save America; Pod Save the World; Pop Culture Happy
+Hour; Race Invaders; Still ProcessingThe Ezra Klein Show; Up, Up and
+Away; WTF with Marc Maron; Women of Marvel
+
+No
+
+I listen to a lot of Podcasts, but this is the only one I really
+interact with on Facebook etc.
+
+Nothing.
+
+Smart, witty, great coverage of the intersection of politics and comics.
+
+I've actually included the podcast in a `recommended' list on a radio
+spot I used to do for my local student radio station.
+
+NA
+
+Yes
+
+5
+
+I like the idea of regular Deep Cuts (great story arcs from the past)
+
+5
+
+4
+
+2
+
+Full episodes about a single topic
+
+This table violates one of the most critical lessons I learned in grad
+school: The values are not atomic. In other words, the answer to the
+question \texttt{names(survey\_anon{[}2{]})} may have more than one
+answer per respondant:
+
+\begin{verbatim}
+##  [1] "Timely and relevant content., Social relevance., The selection of books talked about."                                                                                                                                                                                    
+##  [2] "Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., The best show I have found for balancing love of the medium with a commitment to keeping its feet to the fire when it comes to representation."
+##  [3] "Banter between hosts., Social relevance., The selection of books talked about., Interviews."                                                                                                                                                                              
+##  [4] "Banter between hosts., Social relevance., Interviews."                                                                                                                                                                                                                    
+##  [5] "Banter between hosts., Social relevance., The selection of books talked about."                                                                                                                                                                                           
+##  [6] "Banter between hosts., The selection of books talked about."                                                                                                                                                                                                              
+##  [7] "Timely and relevant content., Banter between hosts., Social relevance."                                                                                                                                                                                                   
+##  [8] "Banter between hosts., Social relevance."                                                                                                                                                                                                                                 
+##  [9] "Timely and relevant content., Banter between hosts., Social relevance., Interviews."                                                                                                                                                                                      
+## [10] "Timely and relevant content., Banter between hosts."                                                                                                                                                                                                                      
+## [11] "Timely and relevant content., Banter between hosts., Social relevance., Interviews., Perspective and theory"                                                                                                                                                              
+## [12] "Banter between hosts., Social relevance."                                                                                                                                                                                                                                 
+## [13] "Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., Pretending that your office is a fun place full of friends is nice."                                                                           
+## [14] "Timely and relevant content., Social relevance."                                                                                                                                                                                                                          
+## [15] "Banter between hosts., Social relevance., Interviews."                                                                                                                                                                                                                    
+## [16] "Banter between hosts., The selection of books talked about., Interviews."                                                                                                                                                                                                 
+## [17] "The selection of books talked about., Interviews."                                                                                                                                                                                                                        
+## [18] "Timely and relevant content., Banter between hosts."                                                                                                                                                                                                                      
+## [19] "Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews."                                                                                                                                                
+## [20] "Banter between hosts., Social relevance., The selection of books talked about., To privately laugh at Marty without hurting his feelings."                                                                                                                                
+## [21] "Timely and relevant content., Banter between hosts., Interviews."                                                                                                                                                                                                         
+## [22] "Timely and relevant content., Social relevance."                                                                                                                                                                                                                          
+## [23] "Timely and relevant content., The selection of books talked about."                                                                                                                                                                                                       
+## [24] "Timely and relevant content., Social relevance."                                                                                                                                                                                                                          
+## [25] "The selection of books talked about."                                                                                                                                                                                                                                     
+## [26] "Timely and relevant content., Social relevance., The selection of books talked about."
+\end{verbatim}
+
+
+\end{document}

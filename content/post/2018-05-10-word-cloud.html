@@ -1,0 +1,21 @@
+---
+title: Word Cloud!
+author: Martin Gleason, MS
+date: '2018-05-10'
+slug: word-cloud
+categories:
+  - word cloud
+  - text mining
+tags:
+  - All Comics Considered
+---
+
+
+
+<p>Today, my <a href="https://allcomicsconsidered.com">podcast</a> launched our <a href="https://www.patreon.com/allcomicsconsidered">Patreon</a>. I had hoped to finish the write of the 2018 Listener Survey analysis I started, but as it turns out, I had a lot of other projects to write up.</p>
+<p>Most of them probation related.</p>
+<p>BUT. In honor of the launch and to get back into the swing of things, I present the word cloud from the ACC 2018 Listener Survey. The image below represent the reasons why people listen to our little show, featuring the <code>tidytext</code> package from the amazing <a href="https://juliasilge.com/">Dr. Julia Silge</a>.</p>
+<pre class="r"><code>a2_wordcloud &lt;- a2  %&gt;% unnest_tokens(word, answers) %&gt;% anti_join(stop_words) %&gt;% 
+  count(word) %&gt;% filter(n &gt; 2) %&gt;% 
+  with(wordcloud(word, n, colors = spectral, random.order = FALSE, random.color = FALSE))</code></pre>
+<p><img src="/post/2018-05-10-word-cloud_files/figure-html/wordcloud-1.png" width="672" /></p>
