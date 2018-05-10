@@ -16,101 +16,10 @@
       <link>/2018/05/word-cloud/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
-<<<<<<< HEAD
       <guid>/2018/05/word-cloud/</guid>
       <description>Today, my podcast launched our Patreon. I had hoped to finish the write of the 2018 Listener Survey analysis I started, but as it turns out, I had a lot of other projects to write up.
 Most of them probation related.
 BUT. In honor of the launch and to get back into the swing of things, I present the word cloud from the ACC 2018 Listener Survey. The image below represent the reasons why people listen to our little show, featuring the tidytext package from the amazing Dr.</description>
-=======
-      <guid>/2018/02/classification-the-next-step/</guid>
-      <description>I’ve been reading the amazing “An Introduction to Statistical Learning” to bone up on my understanding of statistics. This is one of the areas I need to develop for my project, and I’ve already done most (if not all) of DataCamp’s statistics courses.The first three chapters were challenging but not impossible, again thanks to DataCamp’s courses on regression and machine learning.
-Yet Another Certificate!
- The real benefit of this book has been helping me focus on what I need to do in order to develop this data product.</description>
-    </item>
-    
-    <item>
-      <title>Lead and Chicago</title>
-      <link>/2018/01/lead-and-chicago/</link>
-      <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/lead-and-chicago/</guid>
-      <description>## Warning: Duplicated column names deduplicated: &amp;#39;Neighborhood&amp;#39; ## =&amp;gt; &amp;#39;Neighborhood_1&amp;#39; [3], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_2&amp;#39; [4], ## &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_3&amp;#39; [5], &amp;#39;Neighborhood&amp;#39; =&amp;gt; ## &amp;#39;Neighborhood_4&amp;#39; [6], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_5&amp;#39; [7], ## &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_6&amp;#39; [8], &amp;#39;Neighborhood&amp;#39; =&amp;gt; ## &amp;#39;Neighborhood_7&amp;#39; [9], &amp;#39;Neighborhood&amp;#39; =&amp;gt; &amp;#39;Neighborhood_8&amp;#39; [10] I am aware that there is a huge outlier in this data set 1, but I needed to push this data set out to win an argument at work.</description>
-    </item>
-    
-    <item>
-      <title>OYAS and YASI</title>
-      <link>/2018/01/oyas-and-yasi/</link>
-      <pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/oyas-and-yasi/</guid>
-      <description>My department currently uses a risk assessment tool called the YASI. This tool is supposed to help officers classify levels of risk and guide case planning. This was not a tool I ever used, as it was never validated for sexually aggressive juveniles. We will be shifting to the Ohio Youth Assessment System(OYAS) in the near future. As a trainer, it will be my responsibility to learn this new tool. In reading the new scoring guide, I cannot help but ask the following questions:</description>
-    </item>
-    
-    <item>
-      <title>Mental Health in Tech: Early EDA</title>
-      <link>/2018/01/mental-health-in-tech-early-eda/</link>
-      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/mental-health-in-tech-early-eda/</guid>
-      <description>As much fun as reading and online coursework is, at the end of the day, I need to start putting these skills to use. Data set’s like Iris or mtcars, while super fun for training, do not really hold the same place in my heart like data sets involving issues that I deal with at work. Enter Kaggle. I thought it was mostly about competitions. As it so often happens, I was wrong.</description>
-    </item>
-    
-    <item>
-      <title>Understanding and Insight</title>
-      <link>/2018/01/understanding-and-insight/</link>
-      <pubDate>Wed, 10 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/understanding-and-insight/</guid>
-      <description>David Robinson is one of my favorite instructors at Datacamp, and he runs a pretty insightful blog of his own. In this post, he details –succinctly I think – the differences between Data Science, Machine Learning, and Artificial Intelligence. I find these kinds of posts to be helpful as I build out my own projects and deepen my understanding of these same topics.
-For example, when it comes to my own projects at the court, my goal is predominately insight.</description>
-    </item>
-    
-    <item>
-      <title>The Inevitability of (Missing) Deadlines</title>
-      <link>/2018/01/the-inevitability-of-missing-deadlines/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/the-inevitability-of-missing-deadlines/</guid>
-      <description>Friday night is date night. I should not promise to show my work when a date with my wife is on the line. While that post is still on the horizon, I also wanted to share more about my ongoing education in R and statistics. Specifically, that I purchased and have begun reading An Introduction to Statistical Learning. I have the e-book version.
-  Like reading Watchmen for the first time, my plan is to read a chapter a night and do those excercises in the day.</description>
-    </item>
-    
-    <item>
-      <title>Visualization!</title>
-      <link>/2018/01/visualization/</link>
-      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/visualization/</guid>
-      <description>I’m one of the hosts of All Comics Considered. One of our favorite partner shows is Dorkadia. Given our overlap in staff, topics, and fans, I thought it would be fun to compare our facebook data. So I did.
-Tomorrow, I’ll share the scripts.</description>
-    </item>
-    
-    <item>
-      <title>Marks for Style</title>
-      <link>/2018/01/marks-for-style/</link>
-      <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/marks-for-style/</guid>
-      <description>Blogging is old hat to me, but data science is brand new. I’m studying this subject (and a survey of all its componenet parts) like Homer here. This nervous energy is why my first few posts are all about what I do know: Juvenile justice, JEMS, the court, and blogging. Most of these early posts are going to address these topics because it will help establish context. Blogging about what I know does not mean that I’m not honing my R (and github) skill set.</description>
-    </item>
-    
-    <item>
-      <title>What We Currently Use</title>
-      <link>/2018/01/what-we-currently-use/</link>
-      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/what-we-currently-use/</guid>
-      <description>The best way to move this project forward is to start by explaining the current state of the court’s data and its data analysis. While deep dives into how we document cases and court proceedings are not the most exciting aspect of the project, they are a necessary part of making any lasting change. I’m not sure I’ll be doing my colleagues, and the young people I serve, any favors if this project does not address what does, and does not work, with our current system.</description>
-    </item>
-    
-    <item>
-      <title>Setting the Bar for 2018</title>
-      <link>/2018/01/first-post/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/01/first-post/</guid>
-      <description>This new blog has a single purpose: To document my attempt to deploy a neural network in order to ethically address at least one issue faced by juvenile justice professionals and justice involved youth by December 2018. My name is Marty, and I have been a Cook County Juvenile Probation Officer for over seventeen years 1. Being an officer is not just a job for me. It is a vocation, a calling.</description>
->>>>>>> parent of c6ad738... First real save with : Select all, space bar
     </item>
     
   </channel>
