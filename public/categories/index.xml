@@ -11,6 +11,24 @@
     
     
     <item>
+      <title>Data Science</title>
+      <link>/categories/data-science/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Education</title>
+      <link>/categories/education/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/education/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Homebase</title>
       <link>/categories/homebase/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
@@ -38,11 +56,38 @@
     </item>
     
     <item>
+      <title>Machine Learning</title>
+      <link>/categories/machine-learning/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/categories/r/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Text Mining</title>
       <link>/categories/text-mining/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/text-mining/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Timeline</title>
+      <link>/categories/timeline/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/timeline/</guid>
       <description></description>
     </item>
     

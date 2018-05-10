@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Beloit</title>
+      <link>/tags/beloit/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/beloit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Case Management</title>
       <link>/tags/case-management/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
@@ -30,11 +39,38 @@
     </item>
     
     <item>
+      <title>How To</title>
+      <link>/tags/how-to/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/how-to/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intro</title>
+      <link>/tags/intro/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/intro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Jems</title>
       <link>/tags/jems/</link>
       <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/jems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/machine-learning/</guid>
       <description></description>
     </item>
     
