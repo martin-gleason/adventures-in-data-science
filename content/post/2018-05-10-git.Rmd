@@ -16,7 +16,7 @@ What I love about `blogdown` is the way it almost everything I am learing in thi
 # What I did
 I updated this project with a post on some early text mining/word cloud experiment. I took that bit from a much longer post on some survey data I collected for my podcast, [All Comics Considered](https://allcomicsconsidered.com). What I did not do with that longer post was mark it as a draft in the `yaml` header. I published it too soon. The first thing I did to remedy the situation was edit the date on unfinished post so it would appear a week later. Fix the issue by instituting a deadline. Between posting the [wordcloud](2018/05/word-cloud/) post and the date change fix, I managed to delete every other post I had made to this blog. 
 
-(/images/rocket_face_palm.gif)
+![](/images/rocket_face_palm.gif)
 
 I panicked. 
 
