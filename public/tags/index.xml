@@ -6,19 +6,10 @@
     <description>Recent content in Tags on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>#Rstats</title>
-      <link>/tags/#rstats/</link>
-      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/#rstats/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>All Comics Considered</title>
@@ -197,6 +188,15 @@
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/mea-culpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rstats</title>
+      <link>/tags/rstats/</link>
+      <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/rstats/</guid>
       <description></description>
     </item>
     

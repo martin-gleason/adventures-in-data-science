@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.33 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Git</title>
+    <title>Git to the Rescue</title>
     <meta name="author" content="Martin Gleason, MS">
     <meta name="keywords" content=", R, Juvenile Justice, data science, social good">
 
@@ -28,15 +28,15 @@
     
 
     
-    <meta name="description" content="">
-    <meta property="og:description" content="">
+    <meta name="description" content="What I love about blogdown is the way it almost everything I am learing in this project: R, documentation, version control, data as storytelling. My only issue with it is when something bad happens. This is more a question of familiarity than one of difficulty. For instance, if something broke on one of my old wordpress sites, if I couldn’t diagnose and fix the issue quickly, I have friends and, in some cases, a dedicated tech support team to help me fix it.">
+    <meta property="og:description" content="What I love about blogdown is the way it almost everything I am learing in this project: R, documentation, version control, data as storytelling. My only issue with it is when something bad happens. This is more a question of familiarity than one of difficulty. For instance, if something broke on one of my old wordpress sites, if I couldn’t diagnose and fix the issue quickly, I have friends and, in some cases, a dedicated tech support team to help me fix it.">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Git">
+    <meta property="og:title" content="Git to the Rescue">
     <meta property="og:url" content="/2018/05/git/">
     <meta property="og:site_name" content="Adventures in Data Science">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Adventures in Data Science">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:description" content="What I love about blogdown is the way it almost everything I am learing in this project: R, documentation, version control, data as storytelling. My only issue with it is when something bad happens. This is more a question of familiarity than one of difficulty. For instance, if something broke on one of my old wordpress sites, if I couldn’t diagnose and fix the issue quickly, I have friends and, in some cases, a dedicated tech support team to help me fix it.">
     
       <meta name="twitter:creator" content="@officergleason">
     
@@ -223,7 +223,7 @@ ga('send', 'pageview');
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Git
+      Git to the Rescue
     </h1>
   
   
@@ -252,7 +252,18 @@ ga('send', 'pageview');
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
+              <p>What I love about <code>blogdown</code> is the way it almost everything I am learing in this project: R, documentation, version control, data as storytelling. My only issue with it is when something bad happens. This is more a question of familiarity than one of difficulty. For instance, if something broke on one of my old wordpress sites, if I couldn’t diagnose and fix the issue quickly, I have friends and, in some cases, a dedicated tech support team to help me fix it. If I break something in <code>blogdown</code>, then I am the one who has to fix it. Fortunately, the R community (and especially Yiu Hie’s leadership on the package), git tutorials, and Google lead to some quick fixes. The fixes would have been much faster if I wasn’t in a panic and sick as a dog.</p>
+<div id="what-i-did" class="section level1">
+<h1>What I did</h1>
+<p>I updated this project with a post on some early text mining/word cloud experiment. I took that bit from a much longer post on some survey data I collected for my podcast, <a href="https://allcomicsconsidered.com">All Comics Considered</a>. What I did not do with that longer post was mark it as a draft in the <code>yaml</code> header. I published it too soon. The first thing I did to remedy the situation was edit the date on unfinished post so it would appear a week later. Fix the issue by instituting a deadline. Between posting the <a href="2018/05/word-cloud/">wordcloud</a> post and the date change fix, I managed to delete every other post I had made to this blog.</p>
+<p>[images/rocket_face_palm.gif]</p>
+<p>I panicked.</p>
+<p>I knew <code>git</code> could recover deleted files. I initialy tried to pull from my github repo. When that didn’t work, I started googling a better solution. I eventually found the <code>checkout</code> <a href="https://git-scm.com/docs/git-checkout">command.</a>. Since I was in already my blog’s working directory (computer_name:adventures-in-data-science/), I pulled the log file and got a summary of all the files I deleted: <code>git log --diff-filter=D --summary .</code> I tested the solution with the following: <code>git checkout [sha name]~1 00644 content/post/name_of_blog_post.rmd</code>. Like magic, that file reappeared. I loaded two other files by hand, before trying to recover the entire folder. As it happens, by deleteing the name of the blog post in the command, and just leaving <code>content/post</code> I was able to restore everytyhing I had deleted.</p>
+<p>There was one other issue I needed to fix. While the live preview of <code>blogdown</code> worked, it was not updating on the website. After a few frustating minutes of thinking it was <code>git</code> I went to <a href="https://netlify.com">netlify</a> and read the logs about why the build failed. As it turns out, when I recovered the deleted files, I also recovered a series of tags I deleted.[^1] Those tags, I remember, caused errors in hugo. I found the offending rmd file and removed it from the commit. After I pushed the commit to <a href="https://github.com/martin-gleason">github</a>, I manually redeployed the build by netlify, and restored everything I lost.[^2] Now the only thing left to fix is <a href="https://disquss.com">Disquss.</a></p>
+<p>While I would have preferred to learn these <code>git</code> lessons when I was feeling better and less panicked, I did learn them. I hope that by posting this, I can save someone some time and anxiety if the run into a similar issue. I’m also sure there’s an easier way to recover lost files via git– So if you found this useful, or youknow a better way of doing recovering files, let me know in the Disquss comments!</p>
+<p>[^1:] As it happen, I probably should have escaped the # in #Rstats, but I just deleted it. [^2:] At that point, after being sick all night long, I went back to bed and didn’t wake up until the dogs needed to go out.</p>
+</div>
+
               
             </div>
           </div>
@@ -279,7 +290,7 @@ ga('send', 'pageview');
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/g/" data-tooltip="">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -359,7 +370,7 @@ ga('send', 'pageview');
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/05/g/" data-tooltip="">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -488,8 +499,8 @@ ga('send', 'pageview');
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/2018/05/git/">
-                <h3 class="media-heading">Git</h3>
+              <a class="link-unstyled" href="/2018/05/g/">
+                <h3 class="media-heading"></h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -497,6 +508,23 @@ ga('send', 'pageview');
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/05/git/">
+                <h3 class="media-heading">Git to the Rescue</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">What I love about blogdown is the way it almost everything I am learing in this project: R, documentation, version control, data as storytelling. My only issue with it is when something bad happens. This is more a question of familiarity than one of difficulty. For instance, if something broke on one of my old wordpress sites, if I couldn’t diagnose and fix the issue quickly, I have friends and, in some cases, a dedicated tech support team to help me fix it.</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -650,7 +678,7 @@ Tomorrow, I’ll share the scripts.</div>
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         9 posts found
+         10 posts found
       </p>
     </div>
   </div>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2018/05/g/</loc>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/05/git/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
   </url>
@@ -48,14 +53,8 @@
   </url>
   
   <url>
-    <loc>/tags/#rstats/</loc>
-    <lastmod>2018-01-05T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/</loc>
-    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,14 +106,14 @@
   </url>
   
   <url>
-    <loc>/tags/data-science/</loc>
-    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
+    <loc>/categories/data-science/</loc>
+    <lastmod>2018-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/data-science/</loc>
-    <lastmod>2018-01-20T00:00:00+00:00</lastmod>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -137,13 +136,13 @@
   </url>
   
   <url>
-    <loc>/tags/eda/</loc>
+    <loc>/categories/eda/</loc>
     <lastmod>2018-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/eda/</loc>
+    <loc>/tags/eda/</loc>
     <lastmod>2018-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -173,13 +172,13 @@
   </url>
   
   <url>
-    <loc>/tags/git/</loc>
+    <loc>/categories/git/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/git/</loc>
+    <loc>/tags/git/</loc>
     <lastmod>2018-05-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -221,13 +220,13 @@
   </url>
   
   <url>
-    <loc>/tags/jems/</loc>
+    <loc>/categories/jems/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/jems/</loc>
+    <loc>/tags/jems/</loc>
     <lastmod>2018-01-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -239,13 +238,13 @@
   </url>
   
   <url>
-    <loc>/tags/kaggle/</loc>
+    <loc>/categories/kaggle/</loc>
     <lastmod>2018-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/kaggle/</loc>
+    <loc>/tags/kaggle/</loc>
     <lastmod>2018-01-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -263,13 +262,13 @@
   </url>
   
   <url>
-    <loc>/tags/machine-learning/</loc>
+    <loc>/categories/machine-learning/</loc>
     <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/machine-learning/</loc>
+    <loc>/tags/machine-learning/</loc>
     <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -300,7 +299,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -329,6 +328,12 @@
   </url>
   
   <url>
+    <loc>/tags/rstats/</loc>
+    <lastmod>2018-01-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/statistics/</loc>
     <lastmod>2018-01-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -342,7 +347,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-01-05T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Git</title>
+      <title>Git to the Rescue</title>
       <link>/2018/05/git/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/05/git/</guid>
-      <description></description>
+      <description>What I love about blogdown is the way it almost everything I am learing in this project: R, documentation, version control, data as storytelling. My only issue with it is when something bad happens. This is more a question of familiarity than one of difficulty. For instance, if something broke on one of my old wordpress sites, if I couldn’t diagnose and fix the issue quickly, I have friends and, in some cases, a dedicated tech support team to help me fix it.</description>
     </item>
     
   </channel>
