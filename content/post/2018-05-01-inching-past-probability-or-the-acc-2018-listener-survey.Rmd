@@ -1,0 +1,166 @@
+---
+title: Inching past Probabilies or Podcast Survey Results
+author: Martin Gleason, MS
+date: '2018-05-17'
+categories:
+  - meetup
+  - podcast
+  - RStats
+  - text mining
+tags:
+  - All Comics Considered
+---
+
+```{r, packagesandpipe, include=TRUE, echo=FALSE, message=FALSE, error=FALSE}
+library("plyr")
+library("tidyverse")
+library("wordcloud")
+library("tidytext")
+
+library("googlesheets")
+library("kableExtra")
+
+source("/Users/marty/Dropbox (Personal)/Coding Projects/R/scripts/create_df.R")
+source("/Users/marty/Dropbox (Personal)/Coding Projects/R/scripts/answers_from_column.R")
+
+sheets <- gs_ls()
+
+survey_key<- "1WemMnRJphcI5BPgeSAC8wj40If0foT3BH0o-oUApj-g" #need to find a way to automate this right away. 
+
+register_survey <- gs_key(survey_key)
+survey_full <- gs_read(register_survey)
+survey_anon <- survey_full %>% select(-2)
+emails <- survey_full %>% select(2)
+
+questions <- names(survey_full)
+#to find the winner: 
+#sample_n(emails, 1)
+
+
+#Brew color
+spectral <- brewer.pal(8, "Spectral")
+
+#sample text work. a2 is answers to question2. the column was named ansers by names(). the output is worsd
+
+
+```
+
+Probablity is not (yet) my jam. Left to my own devices, I would simply take tutorial after tutorial, class after class, and read book after book. Thankfully, I have an amazing friend who told me to start going to [Meetups](https://www.meetup.com/data-science-dojo-chicago/events/247965706/). So I attended a tutorial hosted by [Raja Iqbal](https://datasciencedojo.com), and learned one key lesson: Show your work.
+
+The work, in this case, is demonstrating how I pulled survey results from Google, cleaned it, and started visualizing it. While this project is not directly related to developing machine learning tools for risk classification, it has given me a better understanding of the process of loading, cleaning, and visualizing real world (and useful) data.
+
+# The Survey
+In preperation for launching a crowd-fund solution, my [podcast](https://allcomicsconsidered.com) crew and I decided to ask our fans what we should do to improve our show. So we put a [form](https://goo.gl/forms/LXkXXiJMvdSi0fpl2) together and asked the following questions:
+
+```{r, the_questions, include=TRUE, echo=FALSE, message=FALSE, error=FALSE} 
+
+questions[3:21]
+```
+
+`r nrow(survey_anon)` people responded to these question. Google Forms has some simple analytics built into the platform, and given the number of responses, a good deal of the insights we gathered from our survey was pulled from that front page. But pulling insights from a form was not how I wanted to access the responses. So I took the opportunity this survey created to see how well I could use R to pull the data.
+
+# Making it More Complicated
+The first step was determining which package I should use to pull the responses. It took a grand total of two minutes to decide on the package: `googlesheets`. This [package](https://cran.r-project.org/web/packages/googlesheets/index.html), by [Jennifer Bryan](https://github.com/jennybc/googlesheets) and Joanna Zhao, has simple, clear, and consistent syntax. Once my [Google credentials](https://rawgit.com/jennybc/googlesheets/master/vignettes/managing-auth-tokens.html)[^1] were authenticated, pulling data from the sheets was a breeze. The function `gs_ls()` pulled a list of my sheets into a tibble, which made finding the key to the survey responses as simple as: 
+`gs_ls %>% filter(str_detect(sheet_title, "All Comics Considered: 2018")) %>% select(sheet_key) %>% as.character()`.[^2]
+
+Armed with the key, I pulled the survey resultls into a single tibble:
+```{r, singleTibble, echo=TRUE, message=FALSE, include = TRUE, error=FALSE}
+
+register_survey <- gs_key(survey_key)
+survey_full <- gs_read(register_survey)
+survey_anon <- survey_full %>% select(-2)
+
+
+```
+This could have been collapsed into one line of code, which I write in footnote 2. Both methods produce the following table. I have limited the number of responses by only displaying the first two responses by limiting `head` to 2:
+
+```{r, tibble, echo=FALSE, message=FALSE, include=TRUE, error=FALSE}
+
+head(survey_anon, n = 2) %>% kable(format =  "html", caption = "Overwhelming Table", booktabs = TRUE) %>% 
+  kable_styling(bootstrap_options = "striped") %>% scroll_box(width = "100%", height = "100%")
+```
+This table violates one of the most critical lessons I learned in grad school: The values are not atomic.  In other words, the answer to the question `names(survey_anon[2])` have more than one answer per respondant:
+
+```{r, survey_anon_q1, echo=FALSE, message=FALSE, include=TRUE}
+
+survey_anon$`Why do you listen to the show? Pick all the reasons that apply.`
+```
+In addition to the multiple answers per item, we also have a few likard scale questions to capture feelings about the show. To be blunt, our data are a hot mess. Google makes it easy to get basic answers, but if I wanted to use anything other than their tools, there would be a lot of work to clean it up. Which, to be fair, is exactly what I want to do.
+
+# Cleaning
+With [Data Camp](https://datacamp.com), one usually has a way to check their work. With our podcast survey, there is a guide in the form of Google's visiualizations, but nothing about intermediate steps of cleaning or tidying. In order to get any insights from this data, I was going to have tidy it myself. 
+
+My first step was to identify any pattern in the responses to pull out individual answers. That was fairly easy for most of the questions, as the default character in Forms is `","`.  My solution was to use the `tidyverse` packages, namely `dplyr` and `stringr` to find unique answers per question. I experimented in the console, building out a solution that would work with one column. 
+
+```{r, step_one, include=TRUE, eval=FALSE}
+survey_anon %>% select(2) %>% pull() %>% 
+  str_split(pattern = ",") %>% 
+  unlist %>% 
+  str_trim() %>% 
+unique()
+```
+
+Once that worked, I made a function that would pull unique phrases:
+
+```{r, answers_from_column_original, include= TRUE, eval = FALSE}
+    answers_from_column <- function(x, pattern = ",", ...)
+      answers <- x %>% pull() %>% 
+        str_split(pattern) %>% 
+        unlist %>% 
+        str_trim() %>% 
+      unique()
+    return(answers)
+
+```
+
+Running that code works brilliantly if you use `select` to get a particular column. If, however, the goal was was to use pipes or to use a vector instead of a table, the function crashes. Hard.[^3] So I added additional logic to make this function more robust:
+```{r, answers_from_column_final, include= TRUE, eval = FALSE}
+
+answers_from_column <- function(x, pattern = ",", ...){
+  if(!is.data.frame(x)){
+    answers <- x %>% 
+      str_split(pattern) %>% 
+      unlist %>% 
+      str_trim() %>% 
+      unique()
+    
+  }
+  else {
+    answers <- x %>% 
+      pull() %>% 
+      str_split(pattern) %>% 
+      unlist %>% 
+      str_trim() %>% 
+      unique()
+  }
+
+  return(answers)
+}
+
+
+```
+
+This newer, more robust function works on vectors as well as data frames, supports pipes, and can take a different pattern argument. I'm sure it needs more work, but, for my purposes, it works pretty well. 
+
+I then spent far, far too much time trying to pull each set of answers into a table so I could plot them. I have a variety of ways to visualize these answers, but given that Google already does this quite well, I felt the need to find a different method to show my team the answers. That's when decided to start playing with word clouds.
+
+The `tidytext` package by [Dr. Julia Silge](https://juliasilge.com/)[^4] was the method I went with. First, I took all of the answers and tokenized them with the `unnest_tokens` method. Tokenizing breaks out all the words in the vector(in my usage, the answers to the survey) and puts them on their own row. Tokens do not need to be limited to one word--one can tokenize by patterns of words or full sentences. For my purposes, a one word per line system was acceptable.
+
+To eliminate words such as "a, of, the", I did did a `dplyr anti_join` with the the `tidytext` stopwords data frame. After that, it was piping this set into the `wordcloud` package, and I got the following:
+
+```{r, wordcloud, include=TRUE, warning=FALSE, echo=TRUE, message=FALSE}
+
+a2 <- survey_anon[2] #"Why do you listen to the show? Pick all the reasons that apply."  
+names(a2) <- "answers"
+
+a2_wordcloud <- a2  %>% unnest_tokens(word, answers) %>% anti_join(stop_words) %>% 
+  count(word) %>% filter(n > 2) %>% 
+  with(wordcloud(word, n, colors = spectral, random.order = FALSE, random.color = FALSE))
+```
+
+I could spend a lot more time delving into our 2018 Listener Data. I know I am going to return to this data set when I want to play with sentiment analysis or data munging, but for now, I can move on, confident that I have learned a lot of different tools and techniques that I can bring to bear on the classification project.
+
+[^1]: Jennifer's vingette explains authentication, where tokens live, and everything you wanted to know about how the package works. 
+[^2]: I was not, originally, so clever with my code. First I stored my sheets in a tibble like so, `sheets <- gs_ls()`, then I may have cut and pasted instead of using `stringr` and `as.character()`. Writing this article now, I realize it could have been as easy as ` gs_ls() %>% filter(str_detect(sheet_title, "All Comics Considered: 2018")) %>% select(sheet_key) %>% as.character() %>% gs_key() %>% gs_read()`. 
+[^3]: I also re-learned something while writing this blog post; specifically that code blocks with the option `eval = TRUE` will over-write other functions and make life even more difficult.
+[^4]: I highly recommend the [Tidy Text Sentiment Analysis class](https://www.datacamp.com/courses/sentiment-analysis-in-r-the-tidy-way)

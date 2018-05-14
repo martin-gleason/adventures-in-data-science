@@ -147,6 +147,15 @@
     </item>
     
     <item>
+      <title>Meetup</title>
+      <link>/categories/meetup/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Mental Health</title>
       <link>/categories/mental-health/</link>
       <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
@@ -161,6 +170,15 @@
       <pubDate>Thu, 04 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Podcast</title>
+      <link>/categories/podcast/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/podcast/</guid>
       <description></description>
     </item>
     
@@ -203,7 +221,7 @@
     <item>
       <title>Rstats</title>
       <link>/categories/rstats/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/rstats/</guid>
       <description></description>
@@ -221,7 +239,7 @@
     <item>
       <title>Text Mining</title>
       <link>/categories/text-mining/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/text-mining/</guid>
       <description></description>

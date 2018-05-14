@@ -1,0 +1,335 @@
+---
+title: Inching past Probabilies or Podcast Survey Results
+author: Martin Gleason, MS
+date: '2018-05-17'
+categories:
+  - meetup
+  - podcast
+  - RStats
+  - text mining
+tags:
+  - All Comics Considered
+---
+
+
+
+<p>Probablity is not (yet) my jam. Left to my own devices, I would simply take tutorial after tutorial, class after class, and read book after book. Thankfully, I have an amazing friend who told me to start going to <a href="https://www.meetup.com/data-science-dojo-chicago/events/247965706/">Meetups</a>. So I attended a tutorial hosted by <a href="https://datasciencedojo.com">Raja Iqbal</a>, and learned one key lesson: Show your work.</p>
+<p>The work, in this case, is demonstrating how I pulled survey results from Google, cleaned it, and started visualizing it. While this project is not directly related to developing machine learning tools for risk classification, it has given me a better understanding of the process of loading, cleaning, and visualizing real world (and useful) data.</p>
+<div id="the-survey" class="section level1">
+<h1>The Survey</h1>
+<p>In preperation for launching a crowd-fund solution, my <a href="https://allcomicsconsidered.com">podcast</a> crew and I decided to ask our fans what we should do to improve our show. So we put a <a href="https://goo.gl/forms/LXkXXiJMvdSi0fpl2">form</a> together and asked the following questions:</p>
+<pre><code>##  [1] &quot;Why do you listen to the show? Pick all the reasons that apply.&quot;                           
+##  [2] &quot;What do you like us to talk about? Pick all the topics you like&quot;                           
+##  [3] &quot;How did you hear about All Comics Considered?&quot;                                             
+##  [4] &quot;How do you listen to All Comics Considered?&quot;                                               
+##  [5] &quot;Is there another podcast platform that you&#39;d prefer?&quot;                                      
+##  [6] &quot;What other podcasts do you listen to?&quot;                                                     
+##  [7] &quot;Do you listen to podcasts on YouTube?&quot;                                                     
+##  [8] &quot;What other podcast or comic book based communities do you participate in?&quot;                 
+##  [9] &quot;What makes you want to turn All Comics Considered off?&quot;                                    
+## [10] &quot;How would you describe All Comics Considered to someone else?&quot;                             
+## [11] &quot;Do you suggest All Comics Considered to friends?  Why or why not?&quot;                         
+## [12] &quot;Have you read the All Comics Considered blog in the past?&quot;                                 
+## [13] &quot;Would you be interested in more written content?&quot;                                          
+## [14] &quot;How much do you like the Pullbox Feature?&quot;                                                 
+## [15] &quot;What would improve the Pullbox Feature?&quot;                                                   
+## [16] &quot;How much do you enjoy our deep dive features into specific comics, properties, and issues?&quot;
+## [17] &quot;How much do you enjoy our shorter, more comedic segments?&quot;                                 
+## [18] &quot;How do you feel about the length of the show?&quot;                                             
+## [19] &quot;What format changes might you be interested in seeing come to the show?&quot;</code></pre>
+<p>26 people responded to these question. Google Forms has some simple analytics built into the platform, and given the number of responses, a good deal of the insights we gathered from our survey was pulled from that front page. But pulling insights from a form was not how I wanted to access the responses. So I took the opportunity this survey created to see how well I could use R to pull the data.</p>
+</div>
+<div id="making-it-more-complicated" class="section level1">
+<h1>Making it More Complicated</h1>
+<p>The first step was determining which package I should use to pull the responses. It took a grand total of two minutes to decide on the package: <code>googlesheets</code>. This <a href="https://cran.r-project.org/web/packages/googlesheets/index.html">package</a>, by <a href="https://github.com/jennybc/googlesheets">Jennifer Bryan</a> and Joanna Zhao, has simple, clear, and consistent syntax. Once my <a href="https://rawgit.com/jennybc/googlesheets/master/vignettes/managing-auth-tokens.html">Google credentials</a><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> were authenticated, pulling data from the sheets was a breeze. The function <code>gs_ls()</code> pulled a list of my sheets into a tibble, which made finding the key to the survey responses as simple as: <code>gs_ls %&gt;% filter(str_detect(sheet_title, &quot;All Comics Considered: 2018&quot;)) %&gt;% select(sheet_key) %&gt;% as.character()</code>.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>Armed with the key, I pulled the survey resultls into a single tibble:</p>
+<pre class="r"><code>register_survey &lt;- gs_key(survey_key)
+survey_full &lt;- gs_read(register_survey)
+survey_anon &lt;- survey_full %&gt;% select(-2)</code></pre>
+<p>This could have been collapsed into one line of code, which I write in footnote 2. Both methods produce the following table. I have limited the number of responses by only displaying the first two responses by limiting <code>head</code> to 2:</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:100%; overflow-x: scroll; width:100%; ">
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tibble">Table 1: </span>Overwhelming Table
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Timestamp
+</th>
+<th style="text-align:left;">
+Why do you listen to the show? Pick all the reasons that apply.
+</th>
+<th style="text-align:left;">
+What do you like us to talk about? Pick all the topics you like
+</th>
+<th style="text-align:left;">
+How did you hear about All Comics Considered?
+</th>
+<th style="text-align:left;">
+How do you listen to All Comics Considered?
+</th>
+<th style="text-align:left;">
+Is there another podcast platform that you’d prefer?
+</th>
+<th style="text-align:left;">
+What other podcasts do you listen to?
+</th>
+<th style="text-align:left;">
+Do you listen to podcasts on YouTube?
+</th>
+<th style="text-align:left;">
+What other podcast or comic book based communities do you participate in?
+</th>
+<th style="text-align:left;">
+What makes you want to turn All Comics Considered off?
+</th>
+<th style="text-align:left;">
+How would you describe All Comics Considered to someone else?
+</th>
+<th style="text-align:left;">
+Do you suggest All Comics Considered to friends? Why or why not?
+</th>
+<th style="text-align:left;">
+Have you read the All Comics Considered blog in the past?
+</th>
+<th style="text-align:left;">
+Would you be interested in more written content?
+</th>
+<th style="text-align:right;">
+How much do you like the Pullbox Feature?
+</th>
+<th style="text-align:left;">
+What would improve the Pullbox Feature?
+</th>
+<th style="text-align:right;">
+How much do you enjoy our deep dive features into specific comics, properties, and issues?
+</th>
+<th style="text-align:right;">
+How much do you enjoy our shorter, more comedic segments?
+</th>
+<th style="text-align:right;">
+How do you feel about the length of the show?
+</th>
+<th style="text-align:left;">
+What format changes might you be interested in seeing come to the show?
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+3/3/2018 20:14:32
+</td>
+<td style="text-align:left;">
+Timely and relevant content., Social relevance., The selection of books talked about.
+</td>
+<td style="text-align:left;">
+Comics TV, Comic Movies, Historical comic titles, Social Justice Issues in Comics
+</td>
+<td style="text-align:left;">
+facebook
+</td>
+<td style="text-align:left;">
+Google Play
+</td>
+<td style="text-align:left;">
+itunes
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+itchy
+</td>
+<td style="text-align:left;">
+sure
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Full episodes about a single topic
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+3/3/2018 20:30:15
+</td>
+<td style="text-align:left;">
+Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., The best show I have found for balancing love of the medium with a commitment to keeping its feet to the fire when it comes to representation.
+</td>
+<td style="text-align:left;">
+Comics TV, Comic Movies, Ongoing comic titles, Historical comic titles, Social Justice Issues in Comics, Ourselves, I think you have the balance right now. Being album to compare the scenarios in different comics to aspects of your own life makes your analysis more grounded.
+</td>
+<td style="text-align:left;">
+Websearch. Serendipity.
+</td>
+<td style="text-align:left;">
+iTunes
+</td>
+<td style="text-align:left;">
+I use Otto occasionally. Mainly iTunes
+</td>
+<td style="text-align:left;">
+Where to start: 95BFM; Adventure: A dungeons and dragons podcast; All in the mind; All songs considered; RNZ At the movies; Book Riot; Can He Do That?; Talking Comic; Freakonomics Radio; Fresh Air; Gone by Lunchtime; Larry Wilmore; Mental Illness Happy Hour; NPR Politics Podcast; On One with Angela Rye; Pod Save America; Pod Save the World; Pop Culture Happy Hour; Race Invaders; Still ProcessingThe Ezra Klein Show; Up, Up and Away; WTF with Marc Maron; Women of Marvel
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:left;">
+I listen to a lot of Podcasts, but this is the only one I really interact with on Facebook etc.
+</td>
+<td style="text-align:left;">
+Nothing.
+</td>
+<td style="text-align:left;">
+Smart, witty, great coverage of the intersection of politics and comics.
+</td>
+<td style="text-align:left;">
+I’ve actually included the podcast in a ‘recommended’ list on a radio spot I used to do for my local student radio station.
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Yes
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+I like the idea of regular Deep Cuts (great story arcs from the past)
+</td>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Full episodes about a single topic
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This table violates one of the most critical lessons I learned in grad school: The values are not atomic. In other words, the answer to the question <code>names(survey_anon[2])</code> have more than one answer per respondant:</p>
+<pre><code>##  [1] &quot;Timely and relevant content., Social relevance., The selection of books talked about.&quot;                                                                                                                                                                                    
+##  [2] &quot;Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., The best show I have found for balancing love of the medium with a commitment to keeping its feet to the fire when it comes to representation.&quot;
+##  [3] &quot;Banter between hosts., Social relevance., The selection of books talked about., Interviews.&quot;                                                                                                                                                                              
+##  [4] &quot;Banter between hosts., Social relevance., Interviews.&quot;                                                                                                                                                                                                                    
+##  [5] &quot;Banter between hosts., Social relevance., The selection of books talked about.&quot;                                                                                                                                                                                           
+##  [6] &quot;Banter between hosts., The selection of books talked about.&quot;                                                                                                                                                                                                              
+##  [7] &quot;Timely and relevant content., Banter between hosts., Social relevance.&quot;                                                                                                                                                                                                   
+##  [8] &quot;Banter between hosts., Social relevance.&quot;                                                                                                                                                                                                                                 
+##  [9] &quot;Timely and relevant content., Banter between hosts., Social relevance., Interviews.&quot;                                                                                                                                                                                      
+## [10] &quot;Timely and relevant content., Banter between hosts.&quot;                                                                                                                                                                                                                      
+## [11] &quot;Timely and relevant content., Banter between hosts., Social relevance., Interviews., Perspective and theory&quot;                                                                                                                                                              
+## [12] &quot;Banter between hosts., Social relevance.&quot;                                                                                                                                                                                                                                 
+## [13] &quot;Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews., Pretending that your office is a fun place full of friends is nice.&quot;                                                                           
+## [14] &quot;Timely and relevant content., Social relevance.&quot;                                                                                                                                                                                                                          
+## [15] &quot;Banter between hosts., Social relevance., Interviews.&quot;                                                                                                                                                                                                                    
+## [16] &quot;Banter between hosts., The selection of books talked about., Interviews.&quot;                                                                                                                                                                                                 
+## [17] &quot;The selection of books talked about., Interviews.&quot;                                                                                                                                                                                                                        
+## [18] &quot;Timely and relevant content., Banter between hosts.&quot;                                                                                                                                                                                                                      
+## [19] &quot;Timely and relevant content., Banter between hosts., Social relevance., The selection of books talked about., Interviews.&quot;                                                                                                                                                
+## [20] &quot;Banter between hosts., Social relevance., The selection of books talked about., To privately laugh at Marty without hurting his feelings.&quot;                                                                                                                                
+## [21] &quot;Timely and relevant content., Banter between hosts., Interviews.&quot;                                                                                                                                                                                                         
+## [22] &quot;Timely and relevant content., Social relevance.&quot;                                                                                                                                                                                                                          
+## [23] &quot;Timely and relevant content., The selection of books talked about.&quot;                                                                                                                                                                                                       
+## [24] &quot;Timely and relevant content., Social relevance.&quot;                                                                                                                                                                                                                          
+## [25] &quot;The selection of books talked about.&quot;                                                                                                                                                                                                                                     
+## [26] &quot;Timely and relevant content., Social relevance., The selection of books talked about.&quot;</code></pre>
+<p>In addition to the multiple answers per item, we also have a few likard scale questions to capture feelings about the show. To be blunt, our data are a hot mess. Google makes it easy to get basic answers, but if I wanted to use anything other than their tools, there would be a lot of work to clean it up. Which, to be fair, is exactly what I want to do.</p>
+</div>
+<div id="cleaning" class="section level1">
+<h1>Cleaning</h1>
+<p>With <a href="https://datacamp.com">Data Camp</a>, one usually has a way to check their work. With our podcast survey, there is a guide in the form of Google’s visiualizations, but nothing about intermediate steps of cleaning or tidying. In order to get any insights from this data, I was going to have tidy it myself.</p>
+<p>My first step was to identify any pattern in the responses to pull out individual answers. That was fairly easy for most of the questions, as the default character in Forms is <code>&quot;,&quot;</code>. My solution was to use the <code>tidyverse</code> packages, namely <code>dplyr</code> and <code>stringr</code> to find unique answers per question. I experimented in the console, building out a solution that would work with one column.</p>
+<pre class="r"><code>survey_anon %&gt;% select(2) %&gt;% pull() %&gt;% 
+  str_split(pattern = &quot;,&quot;) %&gt;% 
+  unlist %&gt;% 
+  str_trim() %&gt;% 
+unique()</code></pre>
+<p>Once that worked, I made a function that would pull unique phrases:</p>
+<pre class="r"><code>    answers_from_column &lt;- function(x, pattern = &quot;,&quot;, ...)
+      answers &lt;- x %&gt;% pull() %&gt;% 
+        str_split(pattern) %&gt;% 
+        unlist %&gt;% 
+        str_trim() %&gt;% 
+      unique()
+    return(answers)</code></pre>
+<p>Running that code works brilliantly if you use <code>select</code> to get a particular column. If, however, the goal was was to use pipes or to use a vector instead of a table, the function crashes. Hard.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> So I added additional logic to make this function more robust:</p>
+<pre class="r"><code>answers_from_column &lt;- function(x, pattern = &quot;,&quot;, ...){
+  if(!is.data.frame(x)){
+    answers &lt;- x %&gt;% 
+      str_split(pattern) %&gt;% 
+      unlist %&gt;% 
+      str_trim() %&gt;% 
+      unique()
+    
+  }
+  else {
+    answers &lt;- x %&gt;% 
+      pull() %&gt;% 
+      str_split(pattern) %&gt;% 
+      unlist %&gt;% 
+      str_trim() %&gt;% 
+      unique()
+  }
+
+  return(answers)
+}</code></pre>
+<p>This newer, more robust function works on vectors as well as data frames, supports pipes, and can take a different pattern argument. I’m sure it needs more work, but, for my purposes, it works pretty well.</p>
+<p>I then spent far, far too much time trying to pull each set of answers into a table so I could plot them. I have a variety of ways to visualize these answers, but given that Google already does this quite well, I felt the need to find a different method to show my team the answers. That’s when decided to start playing with word clouds.</p>
+<p>The <code>tidytext</code> package by <a href="https://juliasilge.com/">Dr. Julia Silge</a><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> was the method I went with. First, I took all of the answers and tokenized them with the <code>unnest_tokens</code> method. Tokenizing breaks out all the words in the vector(in my usage, the answers to the survey) and puts them on their own row. Tokens do not need to be limited to one word–one can tokenize by patterns of words or full sentences. For my purposes, a one word per line system was acceptable.</p>
+<p>To eliminate words such as “a, of, the”, I did did a <code>dplyr anti_join</code> with the the <code>tidytext</code> stopwords data frame. After that, it was piping this set into the <code>wordcloud</code> package, and I got the following:</p>
+<pre class="r"><code>a2 &lt;- survey_anon[2] #&quot;Why do you listen to the show? Pick all the reasons that apply.&quot;  
+names(a2) &lt;- &quot;answers&quot;
+
+a2_wordcloud &lt;- a2  %&gt;% unnest_tokens(word, answers) %&gt;% anti_join(stop_words) %&gt;% 
+  count(word) %&gt;% filter(n &gt; 2) %&gt;% 
+  with(wordcloud(word, n, colors = spectral, random.order = FALSE, random.color = FALSE))</code></pre>
+<p><img src="/post/2018-05-01-inching-past-probability-or-the-acc-2018-listener-survey_files/figure-html/wordcloud-1.png" width="672" /></p>
+<p>I could spend a lot more time delving into our 2018 Listener Data. I know I am going to return to this data set when I want to play with sentiment analysis or data munging, but for now, I can move on, confident that I have learned a lot of different tools and techniques that I can bring to bear on the classification project.</p>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Jennifer’s vingette explains authentication, where tokens live, and everything you wanted to know about how the package works.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>I was not, originally, so clever with my code. First I stored my sheets in a tibble like so, <code>sheets &lt;- gs_ls()</code>, then I may have cut and pasted instead of using <code>stringr</code> and <code>as.character()</code>. Writing this article now, I realize it could have been as easy as <code>gs_ls() %&gt;% filter(str_detect(sheet_title, &quot;All Comics Considered: 2018&quot;)) %&gt;% select(sheet_key) %&gt;% as.character() %&gt;% gs_key() %&gt;% gs_read()</code>.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>I also re-learned something while writing this blog post; specifically that code blocks with the option <code>eval = TRUE</code> will over-write other functions and make life even more difficult.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>I highly recommend the <a href="https://www.datacamp.com/courses/sentiment-analysis-in-r-the-tidy-way">Tidy Text Sentiment Analysis class</a><a href="#fnref4">↩</a></p></li>
+</ol>
+</div>
