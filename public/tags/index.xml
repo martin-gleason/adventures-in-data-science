@@ -57,11 +57,29 @@
     </item>
     
     <item>
+      <title>Court</title>
+      <link>/tags/court/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/court/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Science</title>
       <link>/tags/data-science/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data101</title>
+      <link>/tags/data101/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data101/</guid>
       <description></description>
     </item>
     
@@ -192,6 +210,15 @@
     </item>
     
     <item>
+      <title>Probation</title>
+      <link>/tags/probation/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/probation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Rstats</title>
       <link>/tags/rstats/</link>
       <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
@@ -206,6 +233,15 @@
       <pubDate>Fri, 05 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/stats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Training</title>
+      <link>/tags/training/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/training/</guid>
       <description></description>
     </item>
     

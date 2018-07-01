@@ -1,0 +1,24 @@
+---
+title: Teaching the Basic of Data
+author: Martin Gleason, MS
+date: '2018-07-01'
+slug: teaching-the-basic-of-data
+categories:
+  - Education
+  - Court
+  - probation
+  - data
+  - training
+tags:
+  - court
+  - probation
+  - training
+  - data101
+---
+The best part of my job at the court is that I have the freedom to learn whatever I want, as long as I am able to turn it into a relevant training. To that end, I've attempted to distill what I've learned over the past two years into something that would help my coworkers understand what it means to be data driven. The attached training stresses the fundamentals in a fairly lighthearted way, and lays the ground work for additional trainings.
+
+All of this was written with [remarkjs](https://remarkjs.com/) and the [xaringan](https://slides.yihui.name/xaringan/) package. The embeded [YouTube](http://youtube.com) link is just for background noise while I set up and wait for the training to begin.
+
+```{r,data101, include= TRUE, message = FALSE, warning = FALSE, echo = FALSE}
+knitr::include_url("https://martin-gleason.github.io/data_literacy101/slides_on_data.html#1")
+```

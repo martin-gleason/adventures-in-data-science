@@ -21,6 +21,24 @@
     </item>
     
     <item>
+      <title>Court</title>
+      <link>/categories/court/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/court/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>/categories/data/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Science</title>
       <link>/categories/data-science/</link>
       <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
@@ -50,7 +68,7 @@
     <item>
       <title>Education</title>
       <link>/categories/education/</link>
-      <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/education/</guid>
       <description></description>
@@ -192,6 +210,15 @@
     </item>
     
     <item>
+      <title>Probation</title>
+      <link>/categories/probation/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/probation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Project</title>
       <link>/categories/project/</link>
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
@@ -251,6 +278,15 @@
       <pubDate>Mon, 08 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/timeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Training</title>
+      <link>/categories/training/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/training/</guid>
       <description></description>
     </item>
     

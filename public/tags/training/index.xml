@@ -6,18 +6,18 @@
     <description>Recent content in Training on Adventures in Data Science</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/training/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>OYAS and YASI</title>
-      <link>/2018/01/oyas-and-yasi/</link>
-      <pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate>
+      <title>Teaching the Basic of Data</title>
+      <link>/2018/07/teaching-the-basic-of-data/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/01/oyas-and-yasi/</guid>
-      <description>My department currently uses a risk assessment tool called the YASI. This tool is supposed to help officers classify levels of risk and guide case planning. This was not a tool I ever used, as it was never validated for sexually aggressive juveniles. We will be shifting to the Ohio Youth Assessment System(OYAS) in the near future. As a trainer, it will be my responsibility to learn this new tool. In reading the new scoring guide, I cannot help but ask the following questions:</description>
+      <guid>/2018/07/teaching-the-basic-of-data/</guid>
+      <description>The best part of my job at the court is that I have the freedom to learn whatever I want, as long as I am able to turn it into a relevant training. To that end, I’ve attempted to distill what I’ve learned over the past two years into something that would help my coworkers understand what it means to be data driven. The attached training stresses the fundamentals in a fairly lighthearted way, and lays the ground work for additional trainings.</description>
     </item>
     
   </channel>
