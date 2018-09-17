@@ -1,0 +1,31 @@
+---
+title: "Data, Math, Coding, Politics?"
+author: "Martin Gleason, MS"
+date: '2018-09-17'
+output:
+  html_document:
+    df_print: paged
+slug: data-math-coding-politics
+tags: []
+categories:
+- Court
+- Data Science
+- learning
+---
+
+Getting my hands on the data to begin this project has been exceptionally difficult. In addition to the regular issues within a department such as mine, we have an added layer of bureaucracy in our overseeing agency. In short, there are three gatekeepers of our juvenile court data: Our data people, our contractor, and the state agency that signs the contracts. Each department has their own concerns and regulations regarding this data.
+
+Bureaucracy is not the biggest challenge. Selling the idea of examining our data with advanced techniques is also a difficult proposition. The push back comes in many forms, but can be distilled to a two common concerns:
+
+* *We don't have the time or resources to do this.*
+* *We do not want to ask these questions.*
+
+Time and resources in my field are scarce. Add the requisite math, stats, and coding skills required, and you have a one or two of staff who are proficient in the business needs and the data science skills necessary to examine the data. Frequently, these resources are then diverted towards something that would have a more immediate benefit for end users (ie, officers in the field.) Data visualizations and dashboards have a higher priority than in depth analysis of existing data.
+
+Can you tell what I've been up to then?
+
+![Riding this all the way down.](/images/DrStrangelove.gif)
+
+As part of our roll out of our new case management system, I've spent a lot of free time (and work time) explaining and developing visualizations. This includes creating: mock data and ETLS, learning Shiny and D3, as well as working with GIS tools. The results of some of these [mocks up](https://allcomicsconsideredstats.shinyapps.io/court_dashboards/) can be found on my [github](https://martin-gleason.github.io/court_dashboards/visualizations.html).
+
+I am still holding out hope that I can find a data set to do this work, but in case that project is stalled, the adventure still continue, now with 1000% more visualizations.
