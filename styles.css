@@ -1,0 +1,11 @@
+/* css styles */
+.navbar-logo{
+  max-height: 96px;
+  width: auto;
+}
+
+.title{
+  color: #F8F8F8;
+  text-align: center;
+  font-size: 3rem;
+}

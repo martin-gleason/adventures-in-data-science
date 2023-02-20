@@ -1,0 +1,212 @@
+---
+title: "Advent of Code: Day Three"
+author: "Marty"
+date: "2022-12-3"
+categories:
+  - code
+  - advent of code
+  - puzzle
+  - learning
+---
+
+## [Day 3: Even. More. Regex.](https://adventofcode.com/2022/day/3)
+
+This challenge I started way too late, so it took more than one read to figure out what the challenge actually was. I read it a handful of times, and my take away is that Elves need a better way to organize their rucksacks. My first thought was creating a function to score the letters. The function isn't robust, but it does the job.
+
+```{r}
+#| label: input_function
+#| message: false
+
+
+
+library(tidyverse)
+library(here)
+
+day_three <- read_lines("inputs/day_three.txt")
+
+score_letter <- function(letter, ...){
+  score = c()
+  alpha = c(letters, LETTERS)
+  value = c(1:52)
+  letter_value <- bind_cols(Letter = alpha, Value = value)
+  
+  #first edit
+  for(i in 1:str_length(letter)){
+    l = str_split(letter, "") |> 
+      unlist()
+    score = c(score, letter_value$Value[letter_value$Letter == l[i]])
+  }
+  return(score)
+}
+```
+
+Upon testing, I realized that the function wasn't robust enough to handle a vector of letters, so I sussed out how to process scoring a vector. This actually came to me just as I fell asleep.
+
+The next issue was to create a function that would subset the string in the middle.
+
+```{r}
+#| label: split_string
+split_middle_string <- function(string, ...){
+  n = str_length(string)/2
+  front = string |>
+    str_sub(1, n)
+  
+  back = string |>
+    str_sub(n+1, str_length(string))
+  
+  return(list(front, back))
+}
+
+```
+
+This particular function was done in two steps. I had to add the `n + 1` in the second round of edits. It was the comparing function that I spent the most time with. And with this one, I wanted to practice with lists.
+
+```{r}
+#| label: compare_strings
+compare_strings <- function(list, ...){
+  match = c()
+  front = list[1] |>
+    unlist()
+  count = str_length(front)
+  
+  x = front |>
+    map(str_split, "") |>
+    unlist()
+  
+  for(i in 1:count){
+    match = c(match, list[2] |>
+                 map(str_extract_all, x[i]) |>
+                 unlist())
+  }
+  match <- unique(match) #<- read the instructions
+  return(match)
+}
+```
+
+I wanted to use the `map` function, as I think that'll go a long way to make the remaining challenges easier. With this step, I think using a list was an elegant solution. The problem is, when I ran the solution, I was way over. When I ran the demo strings for the challenge through the each function, it worked -- with one exception. I found ALL the duplicates. The challenge required one. I commented the edit that saved the function and my hairline.
+
+### The solution
+
+I probably could have combined the `numeric` section but because of the loop, I figured it would be easier to get the solution with an extra line.
+
+```{r}
+#| label: solution
+
+total <- list()
+for(i in 1:length(day_three)){
+  total = append(total, day_three[i] |>
+    split_middle_string() |>
+    compare_strings()) 
+}
+
+numeric <- total |> 
+  str_flatten() |> 
+  score_letter()
+
+sum(numeric)
+```
+
+## Part Two: These fucking elves
+
+This challenge begins with collecting the elves into groups of 3 and looking for one common element between all 3. This was, by far, the most difficult challenge so far. I first thought a `sequence` would do it, then `split` and then `read_lines_chunk`. With each step, I ran into the issue of repeating the same `string` over and over.
+
+I solved it by writing out how I would solve it manually, per Hadley Wickham's advice.
+
+```{r}
+group1 <- list(day_three[1:3])
+group2 <- list(day_three[4:6])
+```
+
+From there it became quite apparent how to solve the problem. Appending the list is pretty simple and something I've done multiple times in this challenge. The light bulb went off with the `seq` function and subsetting the vector. When I was crafting the function, a few errors were thrown when I added the sequence function to the `[[` function, so I assigned variables to make it a bit cleaner.
+
+All that said, when this worked, I did shout for joy.
+
+```{r}
+#| label: part_2
+
+x <- seq(1, 300, 3)
+y  <- list()
+
+group <- list()
+for(i in 1:100){
+  b = x[i]
+  e = x[i]+2
+  y = list(day_three[b:e])
+  group = append(group, y)
+}
+```
+
+## What to find
+
+With the grouping done, the challenge was then to find a common character in the 3 strings. To start this section, I started by cutting and pasting the previous `compare_strings` function and then seeing if it could find the same characters from the instructions. While it wasn't able to search all three groups, it was clear that if the function was more robust, it should work.
+
+```{r}
+
+demo <- c("vJrwpWtwJgWrhcsFMMfFFhFp", "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL", "PmmdzqPrVvPwwTWBwg")
+
+find_badge <- function(list, ...){ 
+  match = c()
+  delisting = list[[1]] %>%
+  unlist()
+  elves = length(delisting) 
+  counts = str_length(delisting)
+  
+  x = delisting[[1]] %>%
+  map(str_split, "") %>%
+  unlist()
+
+for(i in 1:counts){ 
+  match = c(match, list[2] %>%
+              map(str_extract_all, x[i]) %>%
+              unlist()) } 
+
+match = unique(match) #\<- read the instructions 
+
+return(match) 
+}
+
+find_badge(demo)
+
+```
+
+But it didn't. There's a way in `R` to check for list elements and to prevent the Out Of Bounds error, but I thought to myself this is not the purpose of R. As a vectorized language, there has to be a better way instead of looping over items and ensuring that I stay within bounds.
+
+I looked for a solution and found one on [Stack Overflow](https://stackoverflow.com/questions/3695677/how-to-find-common-elements-from-multiple-vectors), using `Reduce` and `intersect`.
+
+Per the documentation, "`Reduce` uses a binary function to successively combine the elements of a given vector and a possibly given initial value." Put differently, `Reduce` takes two variables uses the supplied function to combine the elements of a list. `Map` and `apply` apply the function across all the elements in a list and keep them, `Reduce` combines to, well, reduce.
+
+The `intersect` function finds elements across the vectors. In short, the Reduce and intersect function says: `find all the common elements across these lists.`
+
+```{r}
+#| label: find_group
+
+str_break <- function(x, ...){
+  broke_string = x %>%
+    map(str_split, "") %>%
+    unlist()
+  return(broke_string)
+}
+
+find_character <- function(list, ...){
+  collected_characters = c()
+  for(i in 1:length(list)){
+    cluster = list[[i]] %>%
+      map(str_break)
+    common_character = Reduce(intersect, cluster)
+    collected_characters = c(collected_characters, common_character)
+  }
+  return(collected_characters)
+}
+
+common_elements <- find_character(group)
+
+score <- common_elements %>%
+  str_flatten %>%
+  score_letter() %>%
+  sum()
+
+
+
+```
+
+Which leads to a score of `r score`.

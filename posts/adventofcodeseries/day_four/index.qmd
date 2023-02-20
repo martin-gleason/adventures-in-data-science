@@ -1,0 +1,169 @@
+---
+title: "Advent of Code: Day Four"
+author: "Marty"
+date: "2023-2-20"
+categories:
+  - code
+  - advent of code
+  - puzzle
+  - learning
+---
+
+## [Day 4: Clean Up Day](https://adventofcode.com/2022/day/4)
+
+After a few hectic holiday months, I finally got back to the Advent of Code challenge. While I'm pretty confident when it comes to basic data analysis and cleaning, this kind of challenge is making me stretch my skills in an exciting way.
+
+This challenge involved finding which pairs of elves have a range of areas that is completely subsumed by the other. So if Elf A has 2 - 6 and Elf B has 3 - 5, elf B is completely contained in Elf A's range.
+
+First step, as usual, is loading the data and cleaning it. Immediately I started thinking of how to use a `list` to figure out the answer. This has everythign to do with using `map` to solve the previous questions AND from the [Advanced R book.](https://adv-r.hadley.nz/index.html) I couldn't wrap my head around comparing vectors in a list. After trying, and failing, to grok it, I went to the tibble. I figured it'd be easier to spot check on a table than in a list, and also, mutate and regex make easy work of extracting digits.
+
+```{r}
+#| label: loading
+#| warnings: false
+
+library(tidyverse)
+library(here)
+
+pairs <- readr::read_lines(file.path("inputs", "day_four.txt"))  %>% 
+  str_split(" ") %>%
+  str_c() %>%
+  as_tibble() %>%
+  set_names("elf_a") %>%
+  mutate(elf_b = str_extract(elf_a, "(?<=,).*"),
+         elf_a = str_extract(elf_a, "([^,]+)"),
+         elf_a_start = str_extract(elf_a, "([^-]+)") %>%
+           as.integer(),
+         elf_a_end = str_extract(elf_a, "(?<=-).*") %>%
+           as.integer(),
+         elf_b_start = str_extract(elf_b, "([^-]+)") %>%
+           as.integer(), 
+         elf_b_end = str_extract(elf_b, "(?<=-).*") %>%
+           as.integer(),
+         a_contains_b = elf_a_start <= elf_b_start & elf_a_end >= elf_b_end,
+         b_contains_a = elf_b_start <= elf_a_start & elf_b_end >= elf_a_end)
+
+```
+
+The code made a neat table.
+
+```{r}
+#| label: table
+library(tidyverse)
+library(reactable) 
+
+pairs %>%
+  reactable(
+    defaultPageSize = 25,
+    pageSizeOptions = 100,
+    striped = TRUE,
+    bordered = TRUE,
+    theme = reactableTheme(
+      borderColor = "#414141",
+      stripedColor = "#ADD8E6"
+    )
+  )
+
+```
+
+If only the elves wanted tables. But no, I need numbers. Which is easy to get with a few more dplyr functions.
+
+```{r}
+#| label: totals
+
+answer_1 <- pairs %>%
+  select(a_contains_b, b_contains_a) %>%
+  summarise(total = sum(a_contains_b) + sum(b_contains_a))
+
+
+answer_2 <- pairs %>%
+    select(a_contains_b, b_contains_a) %>%
+    summarise(total_a = sum(a_contains_b) ,
+            total_b = sum(b_contains_a))
+
+```
+
+The answer I had was `r answer_1`. It wasn't right for this data set -- but it was the right answer for someone. It made me think that maybe I wasn't supposed to add up the columns -- so I just did a quick summary table.
+
+```{r}
+#| label: summary_table
+
+answer_2
+```
+
+Neither answer worked. I did a quick search on google for a hint -- and landed on [Emil Hvitfeld's solutions.](https://emilhvitfeldt.github.io/rstats-adventofcode/2022.html?panelset=day-4) Reviewing his work and mine... it was eye opening how he used R to solve the issues. He was solving questions with less code and in a vectorized approach. This is the kind of review I need to become a better `R` user. So I'm implemented his solution
+
+```{r}
+#| label: emil
+
+library(tidyverse)
+
+input <- readr::read_lines(file.path("inputs", "day_four.txt")) %>%
+  strsplit("[-,]") %>%
+  map(as.integer)
+
+contain <- function(x) {
+  seq1 <- seq(x[1], x[2])
+  seq2 <- seq(x[3], x[4])
+
+  length(setdiff(seq1, seq2)) == 0 ||
+  length(setdiff(seq2, seq1)) == 0
+}
+
+solution <- map_lgl(input, contain) %>%
+  sum()
+
+```
+
+This returned `r solution`. That's a difference of `r answer_1 - solution` over-laps. I had to see where my error was, so I ran the map function.
+
+```{r}
+map_lgl(input, contain)
+
+```
+
+Reviewing a vector of booleans by hand was not a great idea, but it did lead me to my first thought about my error. There were `r answer_1 - solution` instances where both instances were true. That could be an issue. So I added a few steps to my answer to see if that was indeed the case.
+
+```{r}
+
+pairs %>%
+  select(a_contains_b, b_contains_a) %>%
+  filter(a_contains_b == TRUE & b_contains_a == TRUE) %>%
+  head(10)
+```
+
+Turns out I was right about that. These 35 instances should only have been counted once. The issue is how I calculated the score -- I made two columns and then "added" them together. But this isn't two columns, it's a list of pairs. By doing the operation as two columns, I added extra work for myself.
+
+Armed with this, I went on to part 2.
+
+## Part Two: Overlapping
+
+One doesn't need a PhD in stats to figure that the follow up would be which items overlap. This wasn't something I was going to be able to solve with looking at a range. Emil used set operations -- something that I vaguely remembered from high school -- and I think that was enough of a hint to get started. After a few attempts at working with columns, I decided to build off of Emil's answer. To justify this clue, I had to break each part down and see what each function did. It very quickly made sense. The `strsplit` used regex to remove the "-" and keep each element in the vector seperate. Then turning them into integers was hella easy. A step I couldn't rach as I was so convinced that I should be able to create the ranges just by replacing "-" with ":". Which, isn't how it works.
+
+![](images/not_how_works.gif)
+
+With each element as an integer, creating a range would be fairly simple. I know Emil crafted a function to create a sequence based on the positions of the elements (something that I didn't grok just by reading.) I think that's probably best practice -- it's easy to check and fix a function. But because I needed to "redeem" myself for looking at a clue, I decided to try and use an anonymous function in the map call. I mean, I said I wanted to do more with lists, so I decided to go whole hog. Which wasn't exactly a mistake, but I ran into an issue trying to pass the last two elements into the vector. I refused to look at Emil's work until I had an answer, but I think the anonyous function was not robust enough to turn the elements into ranges for a set operation.
+
+```{r}
+#| label: part_two
+
+part_two <- readr::read_lines(file.path("inputs", "day_four.txt")) %>%
+  str_split("[-,]") %>%
+  map(as.integer)
+
+to_range <- function(elements, ...){
+  range1 <- seq(elements[1], elements[2])
+  range2 <- seq(elements[3], elements[4])
+  
+  length(intersect(range1, range2)) == 0
+}
+
+diff <- part_two %>%
+  map_lgl(to_range) %>%
+  sum()
+
+(1000 - diff)
+```
+
+My initial answers were too low. I realized pretty quickly that this was because my test was looking for vectors with 0 intersection. So I took the the number of "no intersections" and subtracted it from the total number of pairs. If I had thought for a few more minutes, I think I would have eventually run into Emil's solution of more than 0 intersections.
+
+Overall, I'm really excited to see how others solved the first 4 solutions. I was worried that it would just make no sense, but as it happens, even if I'm a little unclear, running the code will make it more clear. For now, that's another day in the bag.

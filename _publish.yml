@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 47bb921c-fa4e-4f5e-8f72-75f808ecbf9d
+      url: 'https://serene-kataifi-cacb62.netlify.app'

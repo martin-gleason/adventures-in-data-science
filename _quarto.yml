@@ -1,0 +1,28 @@
+project:
+  type: website
+
+website:
+  title: "Adventures in Data Science"
+  navbar:
+    title: false
+    logo:  logo.png
+    logo-alt: "adventures in data science logo"
+    search: true
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com
+      - icon: mastodon
+        href: https://universeodon.com/@pogue
+
+      
+format:
+  html:
+    theme: 
+    - flatly
+    - theme.scss
+css: styles.css
+    
+

@@ -1,0 +1,221 @@
+---
+title: "Advent of Code: Day Two"
+author: "Marty"
+date: "2022-12-3"
+categories:
+  - code
+  - advent of code
+  - puzzle
+  - learning
+---
+
+I started this challenge in the late afternoon, but I did take a quick glance after I finished day one. The story of this challenge is a Rock, Paper, Scissors tournament and we have the inside scope of how the elves are going to shoot. It reminded me of the "Pop, Fizz, Buzz" `case_when` [example](https://dplyr.tidyverse.org/reference/case_when.html). I still haven't had time to investigate a way to pull the input, but the challenge days have just begun.
+
+## Rock, Paper, Scissors
+
+The first thing I did was look at the input in a pretty standard way: Read the file and then call `glimpse.`
+
+```{r}
+library(tidyverse)
+library(here)
+library(gt)
+
+day_two <- read_lines_raw("inputs/day2.txt")
+class(day_two[[1]])
+```
+
+On the website, it's a vector of pairs. I remember enough python to think that this maybe be a tuple to data frame situation. I'm still in the process of shaking off the rust, so I'm not sure finring up [reticulate](https://rstudio.github.io/reticulate/) is the best option here. So instead, I look to find a good R solution. At first, I tried a little regex, but I quickly realized that the way read_lines imported the data would create a giant vector. So I tried something else. The documentation of `read_lines` has another function of `read_lines_raw` which "produces a list of raw vectors."
+
+Raw isn't a data type I'm familiar with, but a quick look at the literature pointed out the base R function `rawToChar` which solved the issue and gave me the list i needed.
+
+I'm sure that there are R folks who, armed with that list, could easily find the solution. I'm a sucker for tables, so the first thing I had to do was turn the list into a tibble. This was also an opportunity to work with more regex -- a skill I sorely need.
+
+```{r}
+day_two <- day_two |> 
+  map(rawToChar) |>
+  unlist() |>
+  as_tibble()
+  
+colnames(day_two) <- "hands"
+
+day_two <- day_two |>
+  mutate(elf_hand = str_extract(hands, "([^\\s]+)"),
+         opposing_hand = str_extract(hands, "(?<=\\s).*")) |>
+  select(-hands)
+```
+
+I thought the trick were the patterns `"([^\\s]+)"` and `"(\\s.+)"`. Only the first pattern worked. The second pattern left the white space. A less elegant solution `str_trim` could fix it, but I wanted to figure out regex. It took a little digging on [RegexTester](https://www.regextester.com/), but I found a working pattern: `"(?\<=\\s).\*"`
+
+Here's the first five entries of the new tibble:
+
+```{r}
+#| label: table_1
+
+
+day_two |>
+  head(5) |>
+  gt() |>
+  tab_header(title = "Rock, Paper, Scissors Guide",
+             subtitle = md("*How I Beat the Elves at Their Own Game*")) |>
+  cols_label(elf_hand = "Elf Hand", 
+             opposing_hand = "Opposing Hand") |>
+  tab_style(
+    cell_fill(color = "#87CEEB"),
+    locations = cells_body(
+      rows = seq(1, 5, by = 2)
+  ))
+```
+
+With this table then, I can answer the next part of the puzzle: Scoring.
+
+Each shape gives a base score: 1 for Rock, 2 for Paper, and 3 for Scissors. A loss, tie, or a win also awards points: 0, 3, and 6 respectively. I need to find my final score. To make these calculations, I'll add two columns: Result and Score. I'll calculate results with a function and do something similar with the score.
+
+```{r}
+#| label: scoring
+
+#A = Rock
+#B = Paper
+#C = Scissors
+
+#X  = Rock 1
+#Y = Paper 2
+#Z = Scissors 3
+
+result = function(h1, h2, ...){
+  case_when(
+    h1 == "A" & h2 == "X" ~"Tie",
+    h1 == "A" & h2 == "Y" ~"Win",
+    h1 == "A" & h2 == "Z" ~"Loss",
+    
+    h1 == "B" & h2 == "X" ~"Loss",
+    h1 == "B" & h2 == "Y" ~"Tie",
+    h1 == "B" & h2 == "Z" ~"Win",
+    
+    h1 == "C" & h2 == "X" ~"Win",
+    h1 == "C" & h2 == "Y" ~"Loss",
+    h1 == "C" & h2 == "Z" ~"Tie",
+  )
+}
+
+score_hand = function(hand, ...){
+  case_when(
+    hand == "X" ~1,
+    hand == "Y" ~2,
+    hand == "Z" ~3
+    )
+}
+
+score_result = function(result, ...){
+  case_when(
+    result == "Win" ~6,
+    result == "Loss" ~0,
+    result == "Tie" ~3
+  )
+}
+
+sum(score_hand("X"), score_result("Tie"))
+
+day_two_part1 <- day_two |>
+  mutate(Result = result(elf_hand, opposing_hand)) |>
+  mutate(hand_score = score_hand(opposing_hand)) |>
+  mutate(result_score = score_result(Result)) |>
+  rowwise() |>
+  mutate(Score = sum(hand_score, result_score)) |>
+  select(1:3, Score)
+
+final_score <- sum(day_two_part1$Score)
+```
+
+The answer": `r round(final_score, 0)`. I got it quickly due to an error with the mutate call. What I wanted to do was a column wise operation to add the scores and just have a nice neat column. I ended up using `mutate` to create two temporary columns then using `rowwise` to make the sums.
+
+```{r}
+day_two_part1 |>
+  head(10) |>
+  gt() |>
+  tab_header(title = "Rock, Paper, Scissors Guide: Scoring Results",
+             subtitle = md("*How I Beat the Elves at Their Own Game*")) |>
+  cols_label(elf_hand = "Elf Hand", 
+             opposing_hand = "Opposing Hand") |>
+  tab_style(
+    cell_fill(color = "#87CEEB"),
+    locations = cells_body(
+      rows = seq(1, 10, by = 2)
+  ))
+```
+
+The second part of the second challenge is a pretty great twist: The second column indicates the result of your play. "X means you need to lose, Y means you need to end the round in a draw, and Z means you need to win."
+
+The first thing I need to do here is rename `opposing_hand` to `result.` Which would be confusing if I didn't change `Result`to `my_hand`. I figured if I kept a similar table structure, I could reuse the scoring functions from part one. As I was doing this, I realized that I probably could have created more robust functions. Instead of dwelling on the idea of refactoring, I decided that I should finish and go back to the challenge if I had to.
+
+```{r}
+#z = win 
+#y = tie
+#x = loss
+#A = Rock 1
+#B = Paper 2 
+#C = Scissors 3
+
+outcome <- function(result, ...){
+  case_when(
+    result == "Z" ~"Win",
+    result == "Y" ~"Tie",
+    result == "X" ~"Loss"
+  )
+}
+
+actual_play <- function(elf_hand, result, ...){
+  case_when(
+    elf_hand == "A" & result == "Win" ~"Paper",
+    elf_hand == "A" & result == "Tie" ~"Rock",
+    elf_hand == "A" & result == "Loss" ~"Scissors",
+    
+    elf_hand == "B" & result == "Win" ~"Scissors",
+    elf_hand == "B" & result == "Tie" ~"Paper",
+    elf_hand == "B" & result == "Loss" ~"Rock",
+    
+    elf_hand == "C" & result == "Win" ~"Rock",
+    elf_hand == "C" & result == "Tie" ~"Scissors",
+    elf_hand == "C" & result == "Loss" ~"Paper"
+  )
+}
+
+score_hand_part2 = function(hand, ...){
+  case_when(
+    hand == "Rock" ~1,
+    hand == "Paper" ~2,
+    hand == "Scissors" ~3
+    )
+}
+```
+
+With these functions done, it was just a matter of a few mutate calls.
+
+```{r}
+day_two_part2 <- day_two_part1|>
+  rename(result = opposing_hand) |>
+  rename(my_hand = Result) |>
+  mutate(result = outcome(result)) |>
+  mutate(my_hand = actual_play(elf_hand, result))|>
+  mutate(hand_score = score_hand_part2(my_hand)) |>
+  mutate(result_score = score_result(result)) |>
+  rowwise() |>
+  mutate(Score = sum(hand_score, result_score)) |>
+  select(1, 3, 2, Score)
+
+new_final_score <- sum(day_two_part2$Score)
+
+day_two_part2 |>
+  head(10) |>
+  gt() |>
+  tab_header(title = md("**Rock, Paper, Scissors Guide: Scoring Results -- Part 2**"),
+             subtitle = md("*How I Really Stuck It To Those Point Eared Bastards*")) |>
+  cols_label(elf_hand = "Elf Hand", 
+             my_hand = "My Hand") |>
+  tab_style(
+    cell_fill(color = "#87CEEB"),
+    locations = cells_body(
+      rows = seq(1, 10, by = 2)
+  ))
+```
+
+And with that, challenge day 2 is finished! Future me will certainly turn on comments to see if folks have recommendations on how to improve my code!

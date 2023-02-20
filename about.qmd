@@ -1,0 +1,21 @@
+---
+title: "About Me"
+image: images/mg_profile.jpeg
+about:
+  template: trestles
+  image-shape: round
+  links:
+    - icon: linkedin
+      text: Linked-In
+      href: https://www.linkedin.com/in/martin-gleason/
+    - icon: github
+      text: GitHub
+      href: https://github.com/martin-gleason
+    - icon: mastodon
+      text: Mastodon
+      href: https://universeodon.com/@pogue
+---
+
+I live, work, and organize in Chicago. I started learning data science in order to improve the data quality of my day job, and my interests have have since exploded to include spatial analysis, automation, data visualization, data story telling, and Bayesian statistics.
+
+Data should be used for the betterment of everyone.

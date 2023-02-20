@@ -1,0 +1,50 @@
+/*-- scss:defaults --*/
+//name
+$theme: "blog" !default;
+
+// Fonts to import
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code');
+
+$font-family-sans-serif:  "Open Sans", system-ui, -apple-system, 'Sans Pro','Lato', 'Merriweather', 'Roboto Regular', 'Cabin Regular';
+
+$font-family-monospace: "Courier New", "Fira Code",  "Liberation Mono", !default;
+$font-family-code: "Fira Code", $font-family-monospace;
+
+$font-family-base: "Open Sans", $font-family-sans-serif;
+
+
+$headings-font-family: "Bitter" !default;
+//gradient
+$gradients: () !default;
+$gradients: map-merge((
+    chill: linear-gradient(135deg, #09e485 0%,#0291e3 100%),
+    warm: linear-gradient(135deg, #F2CD48 0%,#FD803F 100%),
+    hot: linear-gradient(135deg, #F9445A 0%,#FD803F 100%),
+    cold: linear-gradient(135deg, #8019C6 0%,#2F93CC 100%)
+), $gradients);
+
+//https://medium.com/@alvaro.saburido/applying-gradient-trends-in-sass-cf825d70f5fe#id_token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjE4MzkyM2M4Y2ZlYzEwZjkyY2IwMTNkMDZlMWU3Y2RkNzg3NGFlYTUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2Njk4NzA4OTMsImF1ZCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMjYyMzUzOTU1ODIyODgxMTk4NyIsImVtYWlsIjoibWFydGluLmdsZWFzb24ubXNAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF6cCI6IjIxNjI5NjAzNTgzNC1rMWs2cWUwNjBzMnRwMmEyamFtNGxqZGNtczAwc3R0Zy5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsIm5hbWUiOiJNYXJ0aW4gR2xlYXNvbiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BTG01d3UwNzduc3N6MTlmZGVuUzkwU19RblU3cE90NWdPdFpLRjV2RWwtRT1zOTYtYyIsImdpdmVuX25hbWUiOiJNYXJ0aW4iLCJmYW1pbHlfbmFtZSI6IkdsZWFzb24iLCJpYXQiOjE2Njk4NzExOTMsImV4cCI6MTY2OTg3NDc5MywianRpIjoiMTk3YjY0NjUyMTJiYzg3MTYxMGI0OTA0Y2IyMjliZDVkMTRhZjYzOSJ9.UEW_oCdSF4602EKoEGeDzaSia0HgKSAW7M9BeducJuOn4zP6-yf3uLYtxNMlADHRZA19ckfpeO2ah0LGZDQfyyad_f4xcyZzw9mA_tigaihd_zAep94fiBzyrYuo91gUYtAlk2zviZQ_xVQr0AB6ZZl_Dt35qygeTmEAcfN1FJXhKxpM-SFwTdla7VOo2x2Es9kTLOeScXNx6WlOYhD97QUqtMeiqQCdruuTEAiNZodRsJK2zsqiwFdR9nRU-r5DgnhNpg4I5QUaCep23Keh0zGaIlPw0EGjB7QgrnBTnrr4lgr8Q6vW_0Lc_yBLmm7QA8xptaeg6y0jWBtMt30XCw
+
+//colors
+
+$black: #061826 !default;
+$red: #9B2915 !default;
+$blue: #28AFB0 !default;
+$dark-grey: #292F36 !default;
+$white: #F8F8F8 !default;
+$sapphire: #125E8A !default;
+$dark-blue: #1C3144 !default;
+$green: #0A3200 !default;
+
+$primary: $sapphire;
+$body-color: $black;
+
+$headings-color: $dark-grey;
+$h1-font-size: 2.75rem;
+
+
+/*-- scss:rules --*/
+
+

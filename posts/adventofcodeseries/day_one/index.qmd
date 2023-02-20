@@ -1,0 +1,100 @@
+---
+title: "Advent of Code Day 1"
+author: "Marty"
+date: "2022-12-2"
+categories:
+  - code
+  - advent of code
+  - puzzle
+  - learning
+---
+
+## Advent of Code: Day One
+
+I'm not a developer, so I don't remember hearing about the [Advent of Code](https://adventofcode.com/2022/) before. Normally, I have a hard time getting excited about doing excericses unless it relates to one of the projects I'm working on. Advent is different. The idea of challenges and puzzles landed with me. It's a way to think about problems and sharpen my skill set and talk about R. So without futher ado, here's my solution for Day 1.
+
+This year, the story behind AOC is helping christmas elves and collecting christmas stars. Day one had two questions: Each elf has a lot of calories as they doing their annual trek. Determine which elf has the most calories, then find the second and third highest tallies.
+
+### The Input
+
+```{r}
+#| warning: false
+
+library(tidyverse)
+library(rvest)
+library(here)
+library(glue)
+
+#didn't work
+url <- "https://adventofcode.com/2022/day/1/input"
+#input <- read_html(url)
+
+```
+
+My libraries here are pretty standard. I'm a pretty dedicated Tidyverse user. I find the code easier to read and follow. That said, I do like to stay sharp with base R functions. Ito use Here because I just refuse set a working directory. And lastly, I was hoping I'd get to practice interacting with websites either via scrapping or downloading.
+
+That didn't happen. I'm must be missing something with rVest in that I would consistently get errors when trying to acquire that elven data. Given that it was already pretty late when that started, I just manually added the input to my script. For this blog post though, I wrote a `tryCatch` to show what I was getting
+
+```{r}
+#| label: error_catch
+tryCatch({
+  read_html(url)},
+  warning = function(warning_message){
+    message("Warning: {warning_message}")
+    
+  },
+  error = function(error_message){
+    message(glue("My error has been: {error_message}"))
+    
+  },
+  finally={
+    message()
+})
+
+
+```
+
+Clearly, this has a lot to do with me not understanding enough of the HTTP protocol. No worry, that's just future blog fodder.
+
+Turning to the input at hand, the instructions made it clear that each "empty line" indicated a new elf. My thought was to subset the string into a list, and then use `lapply` or `map` to get get the answers. That took longer than expected.
+
+I kep trying to subset the list based on regex or an NA. Regex is the bane of my existence, and doing it by NA just didn't seem plausible. I realized early on that I needed to use a loop -- a factor that I try to avoid with R. I was able to get the
+
+Here's my final code:
+
+```{r}
+#| warning: false
+
+input <- read_lines("inputs/input.txt")
+elven_calories <- list()
+x <- c()
+for(i in 1:length(input)){
+  if(str_detect(input[i], "\\d+")){
+   x <- c(x, input[i])
+  } else {
+    x <- as.integer(x)
+    elven_calories <- append(elven_calories, list(x))
+    x <- c()
+  }
+}
+
+```
+
+Before that version, even though the loop was working, nothing was being assigned to the `elven_calories`. The reason why? I didn't assign it. It took an embarrassingly long time to realize that issue. Then I had another issue: The `append` function was adding vectors to the list, and not creating a new list. Once that was fixed, the it was just a matter of adding and sorting!
+
+Here's the answer:
+
+```{r}
+elven_calories |> 
+  map(sum) |>
+  unlist() |>
+  max()
+
+sums <- elven_calories |> 
+  map(sum) |>
+  unlist() 
+  
+sort(sums, decreasing = TRUE)[1:3] |> sum()
+```
+
+This was a fantastically fun challenge. For the next few days, I'll definitely start before 10pm.
